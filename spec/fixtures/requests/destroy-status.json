@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Thu, 20 Oct 2016 15:36:20 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"44136fa355b3678a1146ad16f7e8649e"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=Qm5KNzA0QlI4Ny8wdHVMbUZDQ3BRNm5vRlNNRVRmNFhYd0dJTXRaQWVoR0k0RkZWWi9DR0hkVHNRUmI1eTAvbGdUQ3FlYlNsNlZCTlBhQ3N0V3AzdFVpTkNqZnU3NjBySnN2b2E0QTJVdWw4UVVqcXNvMVkzOFJrTllUK1NrSEotLWNFV3F6Tm5lQVZXRlVxVThvWmYyclE9PQ%3D%3D--623ec934a8507dda8e08dada6b7a571a4542b4c0; path=/; HttpOnly
+X-Request-Id: 802cee6c-c100-4315-b2de-c056a75e9d17
+X-Runtime: 0.282233
+
+{}

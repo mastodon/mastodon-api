@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Thu, 20 Oct 2016 15:42:43 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"4f50521010f1a9e5fc741f9ec696d0ea"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=VDhCSkRkMktEZUNVVEQvMVc1OXhFS09MMnc0d3d0ZWwzTTMrSURJeEVaUlF1TjRMMDFia01xeGowTWJOK1BjcFg0VlZiYmlEdm9DaFZhVW1YamZVczYrdElPZTcwdDlSeHNLakpFQnRZcForMUF0NmJndWlCc2x0Z1JtYVpHem4tLUFCWHpxTUxvbHNvSjhiMzNuQVh2ZEE9PQ%3D%3D--998d3d77ead7be716dfa0eecc74f132cc94dcd13; path=/; HttpOnly
+X-Request-Id: 64c601fa-568c-4ac0-aaa5-a92be202ac72
+X-Runtime: 0.073242
+
+{"id":1,"username":"Gargron","acct":"Gargron","display_name":"Eugen","note":"Developer of Mastodon, a GNU social alternative: https://github.com/Gargron/mastodon","url":"https://mastodon.social/users/Gargron","avatar":"https://mastodon.social/system/accounts/avatars/000/000/001/large/J3IHut1v.png","header":"https://mastodon.social/system/accounts/headers/000/000/001/medium/905578_10207278037490406_6099191809848953837_o.jpg","followers_count":398,"following_count":350,"statuses_count":1297}

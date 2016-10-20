@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Thu, 20 Oct 2016 15:33:11 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"2296aebbb82bec23848d5a1c5dd01838"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=MkhuVGx2Y1V3WlA3OER0blA5UlBSUFRZUzJVYXdQRUY2U0tQTG1OUDFvN2xDcTNaMThwWGg4Umg5V2xkbUgyNk1lYUo3citTeTBOL0NEUURndko0R2FvWElNMTludXhzTUZpZ3dkV1o4SThzWGtud0M1ZzNCT05DWHhYL0V2YlgtLVppMG0ySHhJY0h6ZXluaFR5dHhjRUE9PQ%3D%3D--e9c63b98fff0d292a0562f6a482533f80eac36c3; path=/; HttpOnly
+X-Request-Id: a1fb8891-6e72-44ae-ac15-05ce924f8dda
+X-Runtime: 0.087240
+
+{"id":35989,"created_at":"2016-10-20T15:33:11.125Z","in_reply_to_id":null,"reblog":null,"account":{"id":1,"username":"Gargron","acct":"Gargron","display_name":"Eugen","note":"Developer of Mastodon, a GNU social alternative: https://github.com/Gargron/mastodon","url":"https://mastodon.social/users/Gargron","avatar":"https://mastodon.social/system/accounts/avatars/000/000/001/large/J3IHut1v.png","header":"https://mastodon.social/system/accounts/headers/000/000/001/medium/905578_10207278037490406_6099191809848953837_o.jpg","followers_count":398,"following_count":350,"statuses_count":1298},"media_attachments":[],"mentions":[],"uri":"tag:mastodon.social,2016-10-20:objectId=35989:objectType=Status","content":"<p>Writing a ruby API lib for Mastodon</p>","url":"https://mastodon.social/users/Gargron/updates/17907","reblogs_count":0,"favourites_count":0,"favourited":false,"reblogged":false}

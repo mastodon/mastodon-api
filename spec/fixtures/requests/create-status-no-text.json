@@ -1,0 +1,16 @@
+HTTP/1.1 422 Unprocessable Entity
+Server: nginx/1.9.3 (Ubuntu)
+Date: Thu, 20 Oct 2016 15:27:50 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+Cache-Control: no-cache
+Set-Cookie: _mastodon_session=LzhUbUhvMFpwTUsxbUMzeGV2cXp4U2YvcFRaOTFtVG5Ca0I1ZjZtdklEZzQ4QlZQMXdvcUhDbzdTQjNZMTRyVUJpOXZHZzR2R21RQnQ2YlVHN0plSDFxLzFXei9FRTZqeXdHeVRiVzd1TmJOcCtlL0dac0NLakhVK005UytxTmwtLSswYUJKSWtLVlRNb3FmUFVjV245Qmc9PQ%3D%3D--bd00c70fcc63799d83db7a614e7ce135e55f9be3; path=/; HttpOnly
+X-Request-Id: 31bc2dd6-57a5-409f-bad9-fa943129642a
+X-Runtime: 0.024100
+
+{"error":"Validation failed: Text can't be blank"}
