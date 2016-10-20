@@ -28,4 +28,16 @@ describe Mastodon::REST::Accounts do
       expect(account.username).to eq 'Gargron'
     end
   end
+
+  describe '#followers' do
+    pending
+  end
+
+  describe '#following' do
+    pending
+  end
+
+  describe '#follow_by_uri' do
+    pending
+  end
 end

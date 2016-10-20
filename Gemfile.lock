@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mastodon (0.1.0)
+    mastodon-api (0.0.1)
       addressable (~> 2.4)
       http (~> 2.0)
 
@@ -87,7 +87,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0)
   fuubar
-  mastodon!
+  mastodon-api!
   pry
   rake
   rspec (~> 3.0)

@@ -18,6 +18,27 @@ module Mastodon
       def account(id)
         perform_request_with_object(:get, "/api/v1/accounts/#{id}", {}, Mastodon::Account)
       end
+
+      # Get a list of followers
+      # @param id [Integer]
+      # @return [Mastodon::Collection<Mastodon::Account>]
+      def followers(id)
+        perform_request_with_collection(:get, "/api/v1/accounts/#{id}/followers", {}, Mastodon::Account)
+      end
+
+      # Get a list of followed accounts
+      # @param id [Integer]
+      # @return [Mastodon::Collection<Mastodon::Account>]
+      def following(id)
+        perform_request_with_collection(:get, "/api/v1/accounts/#{id}/following", {}, Mastodon::Account)
+      end
+
+      # Follow a remote user
+      # @param uri [String] The URI of the remote user, in the format of username@domain
+      # @return [Mastodon::Account]
+      def follow_by_uri(uri)
+        perform_request_with_object(:post, "/api/v1/follows", { uri: uri }, Mastodon::Account)
+      end
     end
   end
 end

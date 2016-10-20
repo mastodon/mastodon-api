@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'mastodon/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'mastodon'
+  spec.name          = 'mastodon-api'
   spec.description   = 'A ruby interface to the Mastodon API'
   spec.homepage      = 'https://github.com/Gargron/mastodon-api'
   spec.email         = 'eugen@zeonfederated.com'

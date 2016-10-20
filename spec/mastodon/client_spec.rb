@@ -20,5 +20,4 @@ describe Mastodon::Client do
       expect(subject.base_url).to eq 'https://mastodon.social'
     end
   end
-
 end

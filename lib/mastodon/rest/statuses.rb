@@ -42,6 +42,31 @@ module Mastodon
       def unreblog(id)
         perform_request_with_object(:post, "/api/v1/statuses/#{id}/unreblog", {}, Mastodon::Status)
       end
+
+      # Favourite a status
+      # @param id [Integer]
+      # @return [Mastodon::Status]
+      def favourite(id)
+        perform_request_with_object(:post, "/api/v1/statuses/#{id}/favourite", {}, Mastodon::Status)
+      end
+
+      # Undo a favourite of a status
+      # @param id [Integer]
+      # @return [Mastodon::Status]
+      def unfavourite(id)
+        perform_request_with_object(:post, "/api/v1/statuses/#{id}/unfavourite", {}, Mastodon::Status)
+      end
+
+      # Get a list of statuses by a user
+      # @param account_id [Integer]
+      # @param options [Hash]
+      # @option options :max_id [Integer]
+      # @option options :since_id [Integer]
+      # @option options :limit [Integer]
+      # @return [Mastodon::Collection<Mastodon::Status>]
+      def statuses(account_id, options = {})
+        perform_request_with_collection(:get, "/api/v1/accounts/#{account_id}/statuses", options, Mastodon::Status)
+      end
     end
   end
 end

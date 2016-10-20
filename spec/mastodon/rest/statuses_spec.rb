@@ -66,4 +66,15 @@ describe Mastodon::REST::Statuses do
     end
   end
 
+  describe '#favourite' do
+    pending
+  end
+
+  describe '#unfavourite' do
+    pending
+  end
+
+  describe '#statuses' do
+    pending
+  end
 end
