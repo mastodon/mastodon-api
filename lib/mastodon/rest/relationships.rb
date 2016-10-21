@@ -10,7 +10,7 @@ module Mastodon
       # @param ids [Integer]
       # @return [Mastodon::Collection<Mastodon::Relationship>]
       def relationships(*ids)
-        perform_request_with_collection(:get, '/api/v1/accounts/relationships', { id: ids }, Mastodon::Relationship)
+        perform_request_with_collection(:get, '/api/v1/accounts/relationships', array_param(:id, ids), Mastodon::Relationship)
       end
 
       # Follow a user

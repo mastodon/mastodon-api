@@ -15,5 +15,13 @@ module Mastodon
 
       self
     end
+
+    def size
+      @collection.size
+    end
+
+    def last
+      @collection.last
+    end
   end
 end

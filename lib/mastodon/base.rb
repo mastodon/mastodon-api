@@ -22,6 +22,12 @@ module Mastodon
         end
       end
 
+      def collection_attr_reader(attribute, klass)
+        define_method(attribute) do
+          Mastodon::Collection.new(@attributes[attribute.to_s], klass)
+        end
+      end
+
       def predicate_attr_reader(*attributes)
         attributes.each do |attribute|
           define_predicate_method(attribute)

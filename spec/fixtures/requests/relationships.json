@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Fri, 21 Oct 2016 22:33:05 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"ae9ec67fd40a518017cc4f8cf00cf7f0"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=OWF3Zm5HTmw2ZWNCZTVWWTRLTS9aS0pDR21zSDREaHJjYUVyZUN2ZWJwL2dzUTBZRVptTkZHUTl5blBBZnlhUHA4bHZ6eE52a1RJYjdrbXB4MTIyWGdVaEkvUzVtOFhLMHJpT0JoTzRzbjNNNy9BYzN4YXZHUkVsOFRNWWZDby9Pdjl3R1htZFF5cEU0SVcxNWxDZHN6d0RqSXlSSDhCMmZaZ1dvTElYamEvL0ltL3JwanVaWVB5Nko2alJIRWpwLS0yNm9YZVVBMUR1eW44dWE2Qkl5VVNBPT0%3D--5ab14829051a0666b9bbafffdbd5ff15caaa4975; path=/; HttpOnly
+X-Request-Id: 5fabedbc-b0fc-4451-a865-f81a0cba107a
+X-Runtime: 0.047370
+
+[{"id":236,"following":false,"followed_by":true,"blocking":false},{"id":365,"following":true,"followed_by":true,"blocking":false}]

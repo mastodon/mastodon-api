@@ -27,6 +27,14 @@ module Mastodon
         response = perform_request(request_method, path, options)
         Mastodon::Collection.new(response, klass)
       end
+
+      # Format an array of values into a query param hash
+      # @param key [Symbol]
+      # @param values [Enumerable]
+      # @return [Hash]
+      def array_param(key, values)
+        values.map.with_index { |value, i| ["#{key}[#{i}]", value] }.to_h
+      end
     end
   end
 end

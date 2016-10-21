@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Fri, 21 Oct 2016 22:13:17 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"9664d1ac14284151de03c3f2f4396204"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=TmdpQVE5cG45L3RMbk9rYmVtT0dDSW00MzZuU2hvVWhYaFMwSGlzU0tZS2xaQjJYTHJCZ0ZaYjZtSjlFZ01wK3Q3dEhpWEs3dUFTWEZTNkZKc2JkTmR4bkNVaHdEby90VzMvU2cvdU1EQmxmMzRFL1RhcUZqdnV0a3BrT2xBR3AtLWhPdFVqa3BVWm9ZVUw0ZXpiVEpyMUE9PQ%3D%3D--48a3d8cf7df4ab41aa8be56bf7fa04835497060c; path=/; HttpOnly
+X-Request-Id: d0877d38-cc35-4397-a261-f97a094a7669
+X-Runtime: 0.039091
+
+{"id":51,"redirect_uri":"http://localhost:3000/callback","client_id":"54419fb48ff442cf03a7000000bfcb63300e846e3fb3405bb017852d4396e445","client_secret":"361f41edcc016710b7190b852e4b6dfe0d67ffa8cfdb162fde7274c75995fe8c"}

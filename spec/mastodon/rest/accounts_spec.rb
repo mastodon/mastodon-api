@@ -30,11 +30,27 @@ describe Mastodon::REST::Accounts do
   end
 
   describe '#followers' do
-    pending
+    before do
+      stub_request(:get, "https://mastodon.social/api/v1/accounts/1/followers").to_return(fixture('followers.json'))
+    end
+
+    it 'returns a collection of accounts' do
+      collection = @client.followers(1)
+      expect(collection).to be_a Mastodon::Collection
+      expect(collection.first).to be_a Mastodon::Account
+    end
   end
 
   describe '#following' do
-    pending
+    before do
+      stub_request(:get, "https://mastodon.social/api/v1/accounts/1/following").to_return(fixture('following.json'))
+    end
+
+    it 'returns a collection of accounts' do
+      collection = @client.following(1)
+      expect(collection).to be_a Mastodon::Collection
+      expect(collection.first).to be_a Mastodon::Account
+    end
   end
 
   describe '#follow_by_uri' do
