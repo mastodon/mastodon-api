@@ -25,7 +25,7 @@ module Mastodon
       private
 
       def fail_or_return(code, body)
-        raise Mastodon::Error::ERRORS[code] if Mastodon::Error::ERRORS.include?(code)
+        raise Mastodon::Error::ERRORS[code].from_response(body) if Mastodon::Error::ERRORS.include?(code)
         body
       end
 

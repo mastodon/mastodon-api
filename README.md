@@ -11,7 +11,7 @@ Mastodon API Ruby Gem
 
 A ruby interface for the [Mastodon](https://github.com/Gargron/mastodon) API.
 
-    gem install mastodon-api
+    gem 'mastodon-api', require: 'mastodon'
 
 ## Documentation
 
