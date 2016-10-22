@@ -7,7 +7,7 @@ describe Mastodon::REST::Apps do
 
   describe '#create_app' do
     before do
-      stub_request(:post, "https://mastodon.social/api/v1/apps").to_return(fixture('create-app.json'))
+      stub_request(:post, 'https://mastodon.social/api/v1/apps').to_return(fixture('create-app.json'))
     end
 
     it 'returns an app' do

@@ -11,17 +11,17 @@ Mastodon API Ruby Gem
 
 A ruby interface for the [Mastodon](https://github.com/Gargron/mastodon) API.
 
+## Installation
+
     gem 'mastodon-api', require: 'mastodon'
 
 ## Documentation
 
-[RubyDoc](http://www.rubydoc.info/gems/mastodon-api/Mastodon/REST/API)
+All the documentation is available on [RubyDoc](http://www.rubydoc.info/gems/mastodon-api/Mastodon/REST/API).
 
 ## Usage
 
 Assuming that you already have an access token for a user on a given Mastodon instance:
-
-    require 'mastodon-api'
 
     client = Mastodon::REST::Client.new(base_url: 'https://mastodon.social', bearer_token: 'your_access_token')
 

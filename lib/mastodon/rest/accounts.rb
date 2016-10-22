@@ -37,7 +37,7 @@ module Mastodon
       # @param uri [String] The URI of the remote user, in the format of username@domain
       # @return [Mastodon::Account]
       def follow_by_uri(uri)
-        perform_request_with_object(:post, "/api/v1/follows", { uri: uri }, Mastodon::Account)
+        perform_request_with_object(:post, '/api/v1/follows', { uri: uri }, Mastodon::Account)
       end
     end
   end

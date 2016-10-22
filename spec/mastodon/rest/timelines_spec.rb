@@ -7,7 +7,7 @@ describe Mastodon::REST::Timelines do
 
   describe '#home_timeline' do
     before do
-      stub_request(:get, "https://mastodon.social/api/v1/statuses/home").to_return(fixture('home.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/statuses/home').to_return(fixture('home.json'))
     end
 
     it 'returns a collection of statuses' do
@@ -19,7 +19,7 @@ describe Mastodon::REST::Timelines do
 
   describe '#mentions_timeline' do
     before do
-      stub_request(:get, "https://mastodon.social/api/v1/statuses/mentions").to_return(fixture('mentions.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/statuses/mentions').to_return(fixture('mentions.json'))
     end
 
     it 'returns a collection of statuses' do
@@ -31,7 +31,7 @@ describe Mastodon::REST::Timelines do
 
   describe '#public_timeline' do
     before do
-      stub_request(:get, "https://mastodon.social/api/v1/statuses/public").to_return(fixture('public.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/statuses/public').to_return(fixture('public.json'))
     end
 
     it 'returns a collection of statuses' do

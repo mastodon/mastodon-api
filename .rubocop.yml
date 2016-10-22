@@ -1,0 +1,43 @@
+Metrics/BlockNesting:
+  Max: 2
+
+Metrics/LineLength:
+  AllowURI: true
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 10
+
+Metrics/ModuleLength:
+  Max: 100
+
+Metrics/ParameterLists:
+  Max: 4
+  CountKeywordArgs: true
+
+Style/AccessModifierIndentation:
+  EnforcedStyle: indent
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    find_all: 'select'
+
+Style/Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: 'comma'
+
+Style/RegexpLiteral:
+  Enabled: false

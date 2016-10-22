@@ -7,7 +7,7 @@ describe Mastodon::REST::Accounts do
 
   describe '#verify_credentials' do
     before do
-      stub_request(:get, "https://mastodon.social/api/v1/accounts/verify_credentials").to_return(fixture('verify_credentials.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/accounts/verify_credentials').to_return(fixture('verify_credentials.json'))
     end
 
     it 'returns logged in user\'s account' do
@@ -19,7 +19,7 @@ describe Mastodon::REST::Accounts do
 
   describe '#account' do
     before do
-      stub_request(:get, "https://mastodon.social/api/v1/accounts/1").to_return(fixture('account.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/accounts/1').to_return(fixture('account.json'))
     end
 
     it 'returns an account' do
@@ -31,7 +31,7 @@ describe Mastodon::REST::Accounts do
 
   describe '#followers' do
     before do
-      stub_request(:get, "https://mastodon.social/api/v1/accounts/1/followers").to_return(fixture('followers.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/accounts/1/followers').to_return(fixture('followers.json'))
     end
 
     it 'returns a collection of accounts' do
@@ -43,7 +43,7 @@ describe Mastodon::REST::Accounts do
 
   describe '#following' do
     before do
-      stub_request(:get, "https://mastodon.social/api/v1/accounts/1/following").to_return(fixture('following.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/accounts/1/following').to_return(fixture('following.json'))
     end
 
     it 'returns a collection of accounts' do

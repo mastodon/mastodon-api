@@ -5,7 +5,7 @@ describe Mastodon::Client do
 
   describe '#user_agent' do
     it 'returns the user agent string' do
-      expect(subject.user_agent).to match /MastodonRubyGem/
+      expect(subject.user_agent).to match(/MastodonRubyGem/)
     end
   end
 

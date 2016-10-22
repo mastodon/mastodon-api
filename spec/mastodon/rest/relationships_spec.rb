@@ -7,7 +7,7 @@ describe Mastodon::REST::Relationships do
 
   describe '#relationships' do
     before do
-      stub_request(:get, "https://mastodon.social/api/v1/accounts/relationships?id%5B%5D=236&id%5B%5D=365").to_return(fixture('relationships.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/accounts/relationships?id%5B%5D=236&id%5B%5D=365').to_return(fixture('relationships.json'))
     end
 
     it 'returns a collection of relationships' do

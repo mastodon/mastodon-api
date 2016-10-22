@@ -10,7 +10,7 @@ module Mastodon
       {
         user_agent: @client.user_agent,
         accept: '*/*',
-        authorization: "Bearer #{@client.bearer_token}"
+        authorization: "Bearer #{@client.bearer_token}",
       }
     end
   end
