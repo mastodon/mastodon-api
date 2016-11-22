@@ -13,7 +13,7 @@ module Mastodon
       # @option options :limit [Integer]
       # @return [Mastodon::Collection<Mastodon::Status>]
       def home_timeline(options = {})
-        perform_request_with_collection(:get, '/api/v1/statuses/home', options, Mastodon::Status)
+        perform_request_with_collection(:get, '/api/v1/timelines/home', options, Mastodon::Status)
       end
 
       # Retrieve statuses from the mentions timeline
@@ -23,7 +23,7 @@ module Mastodon
       # @option options :limit [Integer]
       # @return [Mastodon::Collection<Mastodon::Status>]
       def mentions_timeline(options = {})
-        perform_request_with_collection(:get, '/api/v1/statuses/mentions', options, Mastodon::Status)
+        perform_request_with_collection(:get, '/api/v1/timelines/mentions', options, Mastodon::Status)
       end
 
       # Retrieve statuses from the public timeline
@@ -33,7 +33,7 @@ module Mastodon
       # @option options :limit [Integer]
       # @return [Mastodon::Collection<Mastodon::Status>]
       def public_timeline(options = {})
-        perform_request_with_collection(:get, '/api/v1/statuses/public', options, Mastodon::Status)
+        perform_request_with_collection(:get, '/api/v1/timelines/public', options, Mastodon::Status)
       end
     end
   end
