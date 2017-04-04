@@ -40,6 +40,20 @@ module Mastodon
       def unblock(id)
         perform_request_with_object(:post, "/api/v1/accounts/#{id}/unblock", {}, Mastodon::Relationship)
       end
+
+      # Mute a user
+      # @param id [Integer]
+      # @return [Mastodon::Relationship]
+      def mute(id)
+        perform_request_with_object(:post, "/api/v1/accounts/#{id}/mute", {}, Mastodon::Relationship)
+      end
+
+      # Unmute a user
+      # @param id [Integer]
+      # @return [Mastodon::Relationship]
+      def unmute(id)
+        perform_request_with_object(:post, "/api/v1/accounts/#{id}/unmute", {}, Mastodon::Relationship)
+      end
     end
   end
 end

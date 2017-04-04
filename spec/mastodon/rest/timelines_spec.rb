@@ -17,18 +17,6 @@ describe Mastodon::REST::Timelines do
     end
   end
 
-  describe '#mentions_timeline' do
-    before do
-      stub_request(:get, 'https://mastodon.social/api/v1/timelines/mentions').to_return(fixture('mentions.json'))
-    end
-
-    it 'returns a collection of statuses' do
-      timeline = @client.mentions_timeline
-      expect(timeline).to be_a Mastodon::Collection
-      expect(timeline.first).to be_a Mastodon::Status
-    end
-  end
-
   describe '#public_timeline' do
     before do
       stub_request(:get, 'https://mastodon.social/api/v1/timelines/public').to_return(fixture('public.json'))
