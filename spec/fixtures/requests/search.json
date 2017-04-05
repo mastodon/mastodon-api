@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Thu, 20 Oct 2016 16:23:50 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"f2d8cf126564168402ee3e1a09663ef2"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=aUNUYVEyMnJONW1qWWVmdEVQNUhZZ21ISlNNSXMrVVUzNXpEcmNMY0ljOWRrbnVtWFdZT1dvRGl0YVpmWnQxYmlydmtNWVZGVEpkcFZPa2lqQ1IvT2I2NXQwcjZCaUZLTGtRNWUzeDhrUkVFNERJeFNyb2RGSWdkM1NyVlp5SU4tLXV6UWdPVUIxMmFzRklxMnNWNHdjZmc9PQ%3D%3D--9811c8e123ef5d8bd61f557e92a6fac4d4654465; path=/; HttpOnly
+X-Request-Id: 40f4d568-24f8-4b09-b648-f0ceb3bf040e
+X-Runtime: 0.307397
+
+{"accounts":[{"id":2,"username":"loveletter","acct":"loveletter","display_name":"M.U.C.","locked":false,"created_at":"2017-04-04T11:58:08.294Z","note":"Bot version of Christopher Strachey&apos;s &quot;LOVELETTERS&quot; <a href=\"http://black2.fri.uni-lj.si/humbug/files/doktorat-vaupotic/zotero/storage/3DHUAH3I/muc.html\" rel=\"nofollow noopener\" target=\"_blank\"><span class=\"invisible\">http://</span><span class=\"ellipsis\">black2.fri.uni-lj.si/humbug/fi</span><span class=\"invisible\">les/doktorat-vaupotic/zotero/storage/3DHUAH3I/muc.html</span></a> <a href=\"https://botsin.space/tags/botally\" class=\"mention hashtag\">#<span>botALLY</span></a>","url":"https://botsin.space/@loveletter","avatar":"https://botsin.space/system/accounts/avatars/000/000/002/original/6dff259ecbaab2f4.gif?1491325152","header":"https://botsin.space/headers/original/missing.png","followers_count":15,"following_count":1,"statuses_count":17}],"statuses":[],"hashtags":["loveletter"]}
