@@ -22,18 +22,54 @@ describe Mastodon::REST::Relationships do
   end
 
   describe '#follow' do
-    pending
+    before do
+      stub_request(:post, 'https://mastodon.social/api/v1/accounts/1/follow').to_return(fixture('follow.json'))
+    end
+
+    it 'returns the original status' do
+      relationship = @client.follow(1)
+      expect(relationship).to be_a Mastodon::Relationship
+      expect(relationship.id).to eq 1
+      expect(relationship).to be_following
+    end
   end
 
   describe '#unfollow' do
-    pending
+    before do
+      stub_request(:post, 'https://mastodon.social/api/v1/accounts/1/unfollow').to_return(fixture('unfollow.json'))
+    end
+
+    it 'returns the original status' do
+      relationship = @client.unfollow(1)
+      expect(relationship).to be_a Mastodon::Relationship
+      expect(relationship.id).to eq 1
+      expect(relationship).to_not be_following
+    end
   end
 
   describe '#block' do
-    pending
+    before do
+      stub_request(:post, 'https://mastodon.social/api/v1/accounts/1/block').to_return(fixture('block.json'))
+    end
+
+    it 'returns the original status' do
+      relationship = @client.block(1)
+      expect(relationship).to be_a Mastodon::Relationship
+      expect(relationship.id).to eq 1
+      expect(relationship).to be_blocking
+    end
   end
 
   describe '#unblock' do
-    pending
+    before do
+      stub_request(:post, 'https://mastodon.social/api/v1/accounts/1/unblock').to_return(fixture('unblock.json'))
+    end
+
+    it 'returns the original status' do
+      relationship = @client.unblock(1)
+      expect(relationship).to be_a Mastodon::Relationship
+      expect(relationship.id).to eq 1
+      expect(relationship).to_not be_blocking
+    end
   end
 end
