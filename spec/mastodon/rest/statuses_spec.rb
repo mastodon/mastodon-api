@@ -67,14 +67,40 @@ describe Mastodon::REST::Statuses do
   end
 
   describe '#favourite' do
-    pending
+    before do
+      stub_request(:post, 'https://mastodon.social/api/v1/statuses/35768/favourite').to_return(fixture('favourite.json'))
+    end
+
+    it 'returns the original status' do
+      status = @client.favourite(35_768)
+      expect(status).to be_a Mastodon::Status
+      expect(status.id).to eq 35_768
+      expect(status).to be_favourited
+    end
   end
 
   describe '#unfavourite' do
-    pending
+    before do
+      stub_request(:post, 'https://mastodon.social/api/v1/statuses/35768/unfavourite').to_return(fixture('unfavourite.json'))
+    end
+
+    it 'returns the original status' do
+      status = @client.unfavourite(35_768)
+      expect(status).to be_a Mastodon::Status
+      expect(status.id).to eq 35_768
+      expect(status).to_not be_favourited
+    end
   end
 
   describe '#statuses' do
-    pending
+    before do
+      stub_request(:get, 'https://mastodon.social/api/v1/accounts/2/statuses').to_return(fixture('statuses.json'))
+    end
+
+    it 'returns a collection of statuses' do
+      result = @client.statuses(2)
+      expect(result).to be_a Mastodon::Collection
+      expect(result.first).to be_a Mastodon::Status
+    end
   end
 end
