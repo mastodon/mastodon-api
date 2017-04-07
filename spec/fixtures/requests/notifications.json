@@ -1,0 +1,213 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Thu, 20 Oct 2016 15:42:43 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"4f50521010f1a9e5fc741f9ec696d0ea"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=VDhCSkRkMktEZUNVVEQvMVc1OXhFS09MMnc0d3d0ZWwzTTMrSURJeEVaUlF1TjRMMDFia01xeGowTWJOK1BjcFg0VlZiYmlEdm9DaFZhVW1YamZVczYrdElPZTcwdDlSeHNLakpFQnRZcForMUF0NmJndWlCc2x0Z1JtYVpHem4tLUFCWHpxTUxvbHNvSjhiMzNuQVh2ZEE9PQ%3D%3D--998d3d77ead7be716dfa0eecc74f132cc94dcd13; path=/; HttpOnly
+X-Request-Id: 64c601fa-568c-4ac0-aaa5-a92be202ac72
+X-Runtime: 0.073242
+
+[{
+	"id": 412,
+	"type": "follow",
+	"created_at": "2017-04-06T14:15:37.426Z",
+	"account": {
+		"id": 678,
+		"username": "follower",
+		"acct": "follower@mastodon.social",
+		"display_name": "follower",
+		"locked": false,
+		"created_at": "2017-02-06T13:54:52.312Z",
+		"note": "hello",
+		"url": "https://mastodon.social/@follower",
+		"avatar": "https://mastodon.social/system/accounts/avatars/000/000/678/original/8e5531d0de861421.jpg?1491486891",
+		"header": "https://mastodon.social/system/accounts/headers/000/000/678/original/02d6193691dd0b9c.jpg?1491486892",
+		"followers_count": 0,
+		"following_count": 2,
+		"statuses_count": 2
+	}
+}, {
+	"id": 337,
+	"type": "favourite",
+	"created_at": "2017-04-06T02:56:32.085Z",
+	"account": {
+		"id": 502,
+		"username": "favoriter",
+		"acct": "favoriter@mastodon.social",
+		"display_name": "",
+		"locked": false,
+		"created_at": "2017-04-06T02:56:32.036Z",
+		"note": "i fave things",
+		"url": "https://mastodon.social/@favoriter",
+		"avatar": "https://mastodon.social/system/accounts/avatars/000/000/502/original/media.gif?1491447391",
+		"header": "https://mastodon.social/headers/original/missing.png",
+		"followers_count": 0,
+		"following_count": 0,
+		"statuses_count": 0
+	},
+	"status": {
+		"id": 1722,
+		"created_at": "2017-04-06T02:55:02.832Z",
+		"in_reply_to_id": null,
+		"in_reply_to_account_id": null,
+		"sensitive": null,
+		"spoiler_text": "",
+		"visibility": "public",
+		"application": {
+			"name": "LOVELETTER",
+			"website": null
+		},
+		"account": {
+			"id": 2,
+			"username": "loveletter",
+			"acct": "loveletter",
+			"display_name": "M.U.C.",
+			"locked": false,
+			"created_at": "2017-04-04T11:58:08.294Z",
+			"note": "Bot version of Christopher Strachey&apos;s &quot;LOVELETTERS&quot; <a href=\"http://black2.fri.uni-lj.si/humbug/files/doktorat-vaupotic/zotero/storage/3DHUAH3I/muc.html\" rel=\"nofollow noopener\" target=\"_blank\"><span class=\"invisible\">http://</span><span class=\"ellipsis\">black2.fri.uni-lj.si/humbug/fi</span><span class=\"invisible\">les/doktorat-vaupotic/zotero/storage/3DHUAH3I/muc.html</span></a> <a href=\"https://mastodon.social/tags/botally\" class=\"mention hashtag\">#<span>botALLY</span></a>",
+			"url": "https://mastodon.social/@loveletter",
+			"avatar": "https://mastodon.social/system/accounts/avatars/000/000/002/original/6dff259ecbaab2f4.gif?1491325152",
+			"header": "https://mastodon.social/headers/original/missing.png",
+			"followers_count": 19,
+			"following_count": 1,
+			"statuses_count": 27
+		},
+		"media_attachments": [],
+		"mentions": [],
+		"tags": [],
+		"uri": "tag:mastodon.social,2017-04-06:objectId=1722:objectType=Status",
+		"content": "<p>DEAR LOVE <br />         MY CRAVING WISH ANXIOUSLY ADORES YOUR THIRST. MY UNSATISFIED EAGERNESS CLINGS TO YOUR YEARNING. YOU ARE MY BREATHLESS APPETITE. MY ADORATION IMPATIENTLY PINES FOR YOUR FANCY. YOU ARE MY LOVEABLE ARDOUR.<br />                YOURS TENDERLY,<br />                M.U.C.</p>",
+		"url": "https://mastodon.social/@loveletter/1722",
+		"reblogs_count": 0,
+		"favourites_count": 1,
+		"reblog": null,
+		"favourited": null,
+		"reblogged": null
+	}
+}, {
+	"id": 198,
+	"type": "reblog",
+	"created_at": "2017-04-05T16:57:07.733Z",
+	"account": {
+		"id": 214,
+		"username": "reblogger",
+		"acct": "reblogger@mastodon.social",
+		"display_name": "",
+		"locked": false,
+		"created_at": "2017-04-05T15:12:21.904Z",
+		"note": "",
+		"url": "https://mastodon.social/@reblogger",
+		"avatar": "https://mastodon.social/system/accounts/avatars/000/000/214/original/384b6f90ce1a1a08.jpeg?1491405141",
+		"header": "https://mastodon.social/system/accounts/headers/000/000/214/original/missing.png?1491405141",
+		"followers_count": 0,
+		"following_count": 1,
+		"statuses_count": 5
+	},
+	"status": {
+		"id": 778,
+		"created_at": "2017-04-05T16:55:02.399Z",
+		"in_reply_to_id": null,
+		"in_reply_to_account_id": null,
+		"sensitive": null,
+		"spoiler_text": "",
+		"visibility": "public",
+		"application": {
+			"name": "LOVELETTER",
+			"website": null
+		},
+		"account": {
+			"id": 2,
+			"username": "loveletter",
+			"acct": "loveletter",
+			"display_name": "M.U.C.",
+			"locked": false,
+			"created_at": "2017-04-04T11:58:08.294Z",
+			"note": "Bot version of Christopher Strachey&apos;s &quot;LOVELETTERS&quot; <a href=\"http://black2.fri.uni-lj.si/humbug/files/doktorat-vaupotic/zotero/storage/3DHUAH3I/muc.html\" rel=\"nofollow noopener\" target=\"_blank\"><span class=\"invisible\">http://</span><span class=\"ellipsis\">black2.fri.uni-lj.si/humbug/fi</span><span class=\"invisible\">les/doktorat-vaupotic/zotero/storage/3DHUAH3I/muc.html</span></a> <a href=\"https://mastodon.social/tags/botally\" class=\"mention hashtag\">#<span>botALLY</span></a>",
+			"url": "https://mastodon.social/@loveletter",
+			"avatar": "https://mastodon.social/system/accounts/avatars/000/000/002/original/6dff259ecbaab2f4.gif?1491325152",
+			"header": "https://mastodon.social/headers/original/missing.png",
+			"followers_count": 19,
+			"following_count": 1,
+			"statuses_count": 27
+		},
+		"media_attachments": [],
+		"mentions": [],
+		"tags": [],
+		"uri": "tag:mastodon.social,2017-04-05:objectId=778:objectType=Status",
+		"content": "<p>DARLING SWEETHEART <br />        YOU ARE MY SWEET LOVE. MY INFATUATION CLINGS TO YOUR AMOROUS FELLOW FEELING. YOU ARE MY WISTFUL ADORATION, MY WINNING LITTLE LIKING. MY CRAVING LUSTS AFTER YOUR HEART.<br />                YOURS IMPATIENTLY,<br />                M.U.C.</p>",
+		"url": "https://mastodon.social/@loveletter/778",
+		"reblogs_count": 1,
+		"favourites_count": 0,
+		"reblog": null,
+		"favourited": null,
+		"reblogged": null
+	}
+},
+{
+	"id": 423,
+	"type": "mention",
+	"created_at": "2017-04-06T15:13:52.902Z",
+	"account": {
+		"id": 3,
+		"username": "mentioner",
+		"acct": "mentioner@mastodon.social",
+		"display_name": "mentioner",
+		"locked": false,
+		"created_at": "2017-04-04T17:18:39.187Z",
+		"note": "i like to mention accounts",
+		"url": "https://mastodon.social/@mentioner",
+		"avatar": "https://mastodon.social/system/accounts/avatars/000/000/003/original/bdea344402d64432.jpg?1491326319",
+		"header": "https://mastodon.social/headers/original/missing.png",
+		"followers_count": 3,
+		"following_count": 5,
+		"statuses_count": 39
+	},
+	"status": {
+		"id": 2863,
+		"created_at": "2017-04-06T15:13:51.000Z",
+		"in_reply_to_id": 2799,
+		"in_reply_to_account_id": 2,
+		"sensitive": false,
+		"spoiler_text": "",
+		"visibility": "public",
+		"application": null,
+		"account": {
+			"id": 3,
+			"username": "mentioner",
+			"acct": "mentioner@mastodon.social",
+			"display_name": "mentioner",
+			"locked": false,
+			"created_at": "2017-04-04T17:18:39.187Z",
+			"note": "i like to mention accounts",
+			"url": "https://mastodon.social/@mentioner",
+			"avatar": "https://mastodon.social/system/accounts/avatars/000/000/003/original/bdea344402d64432.jpg?1491326319",
+			"header": "https://mastodon.social/headers/original/missing.png",
+			"followers_count": 3,
+			"following_count": 5,
+			"statuses_count": 39
+		},
+		"media_attachments": [],
+		"mentions": [{
+			"url": "https://mastodon.social/@loveletter",
+			"acct": "loveletter",
+			"id": 2,
+			"username": "loveletter"
+		}],
+		"tags": [],
+		"uri": "tag:mastodon.social,2017-04-06:objectId=1788763:objectType=Status",
+		"content": "<p><a href=\"https://mastodon.social/@loveletter\" class=\"h-card u-url p-nickname mention\">@<span>loveletter</span></a> replying to this to actually test something else!</p>",
+		"url": "https://mastodon.social/users/mentioner/updates/1664975",
+		"reblogs_count": 0,
+		"favourites_count": 0,
+		"reblog": null,
+		"favourited": null,
+		"reblogged": null
+	}
+}]
