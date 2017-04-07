@@ -54,6 +54,14 @@ describe Mastodon::REST::Accounts do
   end
 
   describe '#follow_by_uri' do
-    pending
+    before do
+      stub_request(:post, 'https://mastodon.social/api/v1/follows').to_return(fixture('account.json'))
+    end
+
+    it 'returns an account' do
+      result = @client.follow_by_uri('foo@mastodon.social')
+      expect(result).to be_a Mastodon::Account
+      expect(result.username).to eq 'Gargron'
+    end
   end
 end

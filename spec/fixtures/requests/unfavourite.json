@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Thu, 20 Oct 2016 14:18:10 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"b493c8553abfc4d4306e56cab4d9410d"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=S0EwZUQ5ZkFTYnIydklOS2hNeGZISUxsOEg5a2NLRGRsTHFYMTJrTTg0Qm9kNWZoN2ZkVERxdkVpbUpQSi8rTXkwY3BnQjhYZjFvZkJoY0U1bVpEU01kb1RmRTdaMXNaU2F0SFFtalVSUDNrWW9zUHVHOUVCemFMU0ZVYWx1akQtLTFUR0FTNUJDYkdjbU1qa1hsVFdEMGc9PQ%3D%3D--4a3a2b340c1d4c0c48f58aafffc19e3aaf178610; path=/; HttpOnly
+X-Request-Id: ad58f320-32fb-4b0e-b9b2-755722494aa1
+X-Runtime: 0.093637
+
+
+{"id":35768,"created_at":"2017-04-06T16:55:02.132Z","in_reply_to_id":null,"in_reply_to_account_id":null,"sensitive":null,"spoiler_text":"","visibility":"public","application":{"name":"LOVELETTER","website":null},"account":{"id":2,"username":"loveletter","acct":"loveletter","display_name":"M.U.C.","locked":false,"created_at":"2017-04-04T11:58:08.294Z","note":"Bot version of Christopher Strachey&apos;s &quot;LOVELETTERS&quot; <a href=\"http://black2.fri.uni-lj.si/humbug/files/doktorat-vaupotic/zotero/storage/3DHUAH3I/muc.html\" rel=\"nofollow noopener\" target=\"_blank\"><span class=\"invisible\">http://</span><span class=\"ellipsis\">black2.fri.uni-lj.si/humbug/fi</span><span class=\"invisible\">les/doktorat-vaupotic/zotero/storage/3DHUAH3I/muc.html</span></a> <a href=\"https://botsin.space/tags/botally\" class=\"mention hashtag\">#<span>botALLY</span></a>","url":"https://botsin.space/@loveletter","avatar":"https://botsin.space/system/accounts/avatars/000/000/002/original/6dff259ecbaab2f4.gif?1491325152","header":"https://botsin.space/headers/original/missing.png","followers_count":21,"following_count":1,"statuses_count":29},"media_attachments":[],"mentions":[],"tags":[],"uri":"tag:botsin.space,2017-04-06:objectId=35768:objectType=Status","content":"<p>HONEY DUCK <br />         MY LUST THIRSTS FOR YOUR AFFECTIONATE DEVOTION. YOU ARE MY BREATHLESS HUNGER. MY WISH PANTS FOR YOUR YEARNING. MY CHARM FONDLY SIGHS FOR YOUR LUST. MY ENTHUSIASM WISTFULLY LUSTS AFTER YOUR AFFECTIONATE LONGING.<br />                YOURS ANXIOUSLY,<br />                M.U.C.</p>","url":"https://botsin.space/@loveletter/35768","reblogs_count":0,"favourites_count":1,"reblog":null,"favourited":false,"reblogged":false}
