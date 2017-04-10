@@ -12,7 +12,12 @@ module Mastodon
       # @param media_ids [Array<Integer>]
       # @return [Mastodon::Status]
       def create_status(text, in_reply_to_id = nil, media_ids = [])
-        perform_request_with_object(:post, '/api/v1/statuses', array_param(:media_ids, media_ids).merge(status: text, in_reply_to_id: in_reply_to_id), Mastodon::Status)
+        params = {
+          status: text,
+          in_reply_to_id: in_reply_to_id,
+          'media_ids[]' => media_ids,
+        }
+        perform_request_with_object(:post, '/api/v1/statuses', params, Mastodon::Status)
       end
 
       # Retrieve status
