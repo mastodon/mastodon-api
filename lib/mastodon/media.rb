@@ -14,6 +14,7 @@ module Mastodon
     normal_attr_reader :id, :type, :url, :preview_url, :text_url
 
     def initialize(attributes = {})
+      super
       attributes.fetch('id')
     end
   end
