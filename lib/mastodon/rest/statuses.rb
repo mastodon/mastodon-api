@@ -57,6 +57,22 @@ module Mastodon
         perform_request_with_object(:post, "/api/v1/statuses/#{id}/unfavourite", {}, Mastodon::Status)
       end
 
+      # Get a list of accounts that reblogged a toot
+      # @param id [Integer]
+      # @param options [Hash]
+      # @return [Mastodon::Collection<Mastodon::Account>]
+      def reblogged_by(id, options = {})
+        perform_request_with_collection(:get, "/api/v1/statuses/#{id}/reblogged_by", options, Mastodon::Account)
+      end
+
+      # Get a list of accounts that favourited a toot
+      # @param id [Integer]
+      # @param options [Hash]
+      # @return [Mastodon::Collection<Mastodon::Account>]
+      def favourited_by(id, options = {})
+        perform_request_with_collection(:get, "/api/v1/statuses/#{id}/favourited_by", options, Mastodon::Account)
+      end
+
       # Get a list of statuses by a user
       # @param account_id [Integer]
       # @param options [Hash]

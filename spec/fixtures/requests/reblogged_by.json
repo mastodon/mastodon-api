@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Fri, 21 Oct 2016 22:17:14 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"82018179fec88834fd8f04334a251b9b"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=OHFnNm1HbzNLdFBnaUlYMXg1SzhvQmxpK2VGY3krTU8xVEpieitJdU1OTUd3dFIyRCtDNklzbWdqbzJHSFJVMVpQdC96bUIrdnlNQjRWRWowb3huSFhDTXQzT0tvUStoMWlWK3JsNVZ6eW5sS0lpK3UxcUgwUTg5cjV0ZDFkNHN3emdtdk5CQnVCZWloTGd6aVlDbTJRPT0tLVZkTzZxVi8vcE1reStDdlRrNWJtQmc9PQ%3D%3D--34ee26d58b5cc3ca3ea877ed674c541b9fd007a4; path=/; HttpOnly
+X-Request-Id: 27da8655-b932-4bf1-ab9b-6494392b0726
+X-Runtime: 4.703396
+
+[{"id":1,"username":"muffinista","acct":"muffinista","display_name":"colin mitchell","locked":false,"created_at":"2017-04-03T19:39:53.708Z","note":"hello! i run botsin.space but my main account is muffinista@mastodon.social","url":"https://botsin.space/@muffinista","avatar":"https://botsinspace.s3.amazonaws.com/accounts/avatars/000/000/001/original/86120511d24d4e89.jpg?1491918182","header":"https://botsinspace.s3.amazonaws.com/accounts/headers/000/000/001/original/5231bd9447c7b5f9.jpg?1491918780","followers_count":4,"following_count":0,"statuses_count":2}]
