@@ -6,6 +6,8 @@ module Mastodon
     #   @return [String]
     # @!attribute [r] acct
     #   @return [String]
+    # @!attribute [r] display_name
+    #   @return [String]
     # @!attribute [r] url
     #   @return [String]
     # @!attribute [r] avatar
@@ -21,7 +23,17 @@ module Mastodon
     # @!attribute [r] statuses_count
     #   @return [Integer]
 
-    normal_attr_reader :id, :username, :acct, :url, :avatar, :header, :note, :followers_count, :following_count, :statuses_count
+    normal_attr_reader :id,
+                       :username,
+                       :acct,
+                       :display_name,
+                       :url,
+                       :avatar,
+                       :header,
+                       :note,
+                       :followers_count,
+                       :following_count,
+                       :statuses_count
 
     def initialize(attributes = {})
       attributes.fetch('id')
