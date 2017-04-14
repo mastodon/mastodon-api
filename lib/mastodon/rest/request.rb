@@ -19,6 +19,8 @@ module Mastodon
       def perform
         options_key = @request_method == :get ? :params : :form
         response    = http_client.headers(@headers).public_send(@request_method, @uri.to_s, options_key => @options)
+        STDERR.puts response.body if ENV['DEBUG'] == 'true'
+
         fail_or_return(response.code, response.body.empty? ? '' : response.parse)
       end
 

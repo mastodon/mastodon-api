@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mastodon-api (1.0.0)
+    mastodon-api (1.1.0)
       addressable (~> 2.4)
       http (~> 2.0)
 
@@ -15,13 +15,13 @@ GEM
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    domain_name (0.5.20160826)
+    domain_name (0.5.20170223)
       unf (>= 0.0.5, < 1.0.0)
     fuubar (2.2.0)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
     hashdiff (0.3.0)
-    http (2.0.3)
+    http (2.2.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
       http-form_data (~> 1.0.1)
