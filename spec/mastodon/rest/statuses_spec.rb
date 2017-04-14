@@ -92,6 +92,30 @@ describe Mastodon::REST::Statuses do
     end
   end
 
+  describe '#favourited_by' do
+    before do
+      stub_request(:get, 'https://mastodon.social/api/v1/statuses/23778/favourited_by').to_return(fixture('favourited_by.json'))
+    end
+
+    it 'returns a collection of accounts' do
+      result = @client.favourited_by(23_778)
+      expect(result).to be_a Mastodon::Collection
+      expect(result.first).to be_a Mastodon::Account
+    end
+  end
+
+  describe '#reblogged_by' do
+    before do
+      stub_request(:get, 'https://mastodon.social/api/v1/statuses/23778/reblogged_by').to_return(fixture('reblogged_by.json'))
+    end
+
+    it 'returns a collection of accounts' do
+      result = @client.reblogged_by(23_778)
+      expect(result).to be_a Mastodon::Collection
+      expect(result.first).to be_a Mastodon::Account
+    end
+  end
+
   describe '#statuses' do
     before do
       stub_request(:get, 'https://mastodon.social/api/v1/accounts/2/statuses').to_return(fixture('statuses.json'))
