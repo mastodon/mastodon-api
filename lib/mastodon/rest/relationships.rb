@@ -20,6 +20,13 @@ module Mastodon
         perform_request_with_object(:post, "/api/v1/accounts/#{id}/follow", {}, Mastodon::Relationship)
       end
 
+      # Follow a remote user
+      # @param uri [String] username@domain of the person you want to follow
+      # @return [Mastodon::Account]
+      def remote_follow(uri)
+        perform_request_with_object(:post, '/api/v1/follows', { uri: uri }, Mastodon::Account)
+      end
+
       # Unfollow a user
       # @param id [Integer]
       # @return [Mastodon::Relationship]
