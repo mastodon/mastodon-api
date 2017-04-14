@@ -17,6 +17,14 @@ describe Mastodon::REST::Statuses do
       stub_request(:post, 'https://mastodon.social/api/v1/statuses').to_return(fixture('create-status-no-text.json'))
       expect { @client.create_status('') }.to raise_error Mastodon::Error::UnprocessableEntity
     end
+
+    it 'returns media when specified' do
+      stub_request(:post, 'https://mastodon.social/api/v1/statuses').to_return(fixture('create-status-with-media.json'))
+      status = @client.create_status('test!', nil, [1467])
+      expect(status).to be_a Mastodon::Status
+      expect(status.content).to match(/test!/)
+      expect(status.media_attachments.first).to be_a Mastodon::Entities::Media
+    end
   end
 
   describe '#status' do
