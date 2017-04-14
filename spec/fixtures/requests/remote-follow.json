@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: nginx/1.9.3 (Ubuntu)
+Date: Thu, 20 Oct 2016 14:18:10 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+ETag: W/"b493c8553abfc4d4306e56cab4d9410d"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _mastodon_session=S0EwZUQ5ZkFTYnIydklOS2hNeGZISUxsOEg5a2NLRGRsTHFYMTJrTTg0Qm9kNWZoN2ZkVERxdkVpbUpQSi8rTXkwY3BnQjhYZjFvZkJoY0U1bVpEU01kb1RmRTdaMXNaU2F0SFFtalVSUDNrWW9zUHVHOUVCemFMU0ZVYWx1akQtLTFUR0FTNUJDYkdjbU1qa1hsVFdEMGc9PQ%3D%3D--4a3a2b340c1d4c0c48f58aafffc19e3aaf178610; path=/; HttpOnly
+X-Request-Id: ad58f320-32fb-4b0e-b9b2-755722494aa1
+X-Runtime: 0.093637
+
+{"id":2,"username":"muffinista","acct":"muffinista@mastodon.social","display_name":"Colin Mitchell","locked":false,"created_at":"2017-04-12T16:00:46.084Z","followers_count":1,"following_count":0,"statuses_count":0,"note":"i make stuff on the internet. my home: <a href=\"http://muffinlabs.com/\" rel=\"nofollow noopener\"><span class=\"invisible\">http://</span><span class=\"\">muffinlabs.com/</span><span class=\"invisible\"></span></a> also running <a href=\"https://botsin.space/\" rel=\"nofollow noopener noopener\"><span class=\"invisible\">https://</span><span class=\"\">botsin.space/</span><span class=\"invisible\"></span></a> for your mastodon bot fun","url":"https://mastodon.social/@muffinista","avatar":"http://lvh.me:4000/system/accounts/avatars/000/000/002/original/bdea344402d64432.jpg?1492012846","avatar_static":"http://lvh.me:4000/system/accounts/avatars/000/000/002/original/bdea344402d64432.jpg?1492012846","header":"http://lvh.me:4000/headers/original/missing.png","header_static":"http://lvh.me:4000/headers/original/missing.png"}

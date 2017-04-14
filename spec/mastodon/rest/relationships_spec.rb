@@ -34,6 +34,18 @@ describe Mastodon::REST::Relationships do
     end
   end
 
+  describe '#remote_follow' do
+    before do
+      stub_request(:post, 'https://mastodon.social/api/v1/follows').to_return(fixture('remote-follow.json'))
+    end
+
+    it 'returns the local representation of the followed account' do
+      account = @client.remote_follow('muffinista@mastodon.social')
+      expect(account).to be_a Mastodon::Account
+      expect(account.id).to eq 2
+    end
+  end
+
   describe '#unfollow' do
     before do
       stub_request(:post, 'https://mastodon.social/api/v1/accounts/1/unfollow').to_return(fixture('unfollow.json'))
