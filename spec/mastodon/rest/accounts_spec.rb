@@ -17,6 +17,18 @@ describe Mastodon::REST::Accounts do
     end
   end
 
+  describe '#update_credentials' do
+    before do
+      stub_request(:patch, 'https://mastodon.social/api/v1/accounts/update_credentials').to_return(fixture('update_credentials.json'))
+    end
+
+    it 'returns logged in user\'s account' do
+      account = @client.update_credentials(display_name: 'New Display Name')
+      expect(account).to be_a Mastodon::Account
+      expect(account.display_name).to eq 'New Display Name'
+    end
+  end
+
   describe '#account' do
     before do
       stub_request(:get, 'https://mastodon.social/api/v1/accounts/1').to_return(fixture('account.json'))

@@ -12,6 +12,17 @@ module Mastodon
         perform_request_with_object(:get, '/api/v1/accounts/verify_credentials', {}, Mastodon::Account)
       end
 
+      # Update authenticated account attributes
+      # @param options [Hash]
+      # @option options display_name [String] The name to display in the user's profile
+      # @option options note [String] A new biography for the user
+      # @option options avatar [String] A base64 encoded image to display as the user's avatar
+      # @option options header [String] A base64 encoded image to display as the user's header image
+      # @return [Mastodon::Account]
+      def update_credentials(opts = {})
+        perform_request_with_object(:patch, '/api/v1/accounts/update_credentials', opts, Mastodon::Account)
+      end
+
       # Retrieve account
       # @param id [Integer]
       # @return [Mastodon::Account]
