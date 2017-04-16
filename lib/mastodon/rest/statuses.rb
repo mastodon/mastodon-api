@@ -10,12 +10,14 @@ module Mastodon
       # @param text [String]
       # @param in_reply_to_id [Integer]
       # @param media_ids [Array<Integer>]
+      # @param visibility [String]
       # @return [Mastodon::Status]
-      def create_status(text, in_reply_to_id = nil, media_ids = [])
+      def create_status(text, in_reply_to_id = nil, media_ids = [], visibility = nil)
         params = {
           status: text,
           in_reply_to_id: in_reply_to_id,
           'media_ids[]' => media_ids,
+          visibility: visibility,
         }
         perform_request_with_object(:post, '/api/v1/statuses', params, Mastodon::Status)
       end
