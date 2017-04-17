@@ -7,6 +7,7 @@ require 'mastodon/rest/relationships'
 require 'mastodon/rest/media'
 require 'mastodon/rest/suggestions'
 require 'mastodon/rest/apps'
+require 'mastodon/rest/instances'
 
 module Mastodon
   module REST
@@ -20,6 +21,7 @@ module Mastodon
       include Mastodon::REST::Media
       include Mastodon::REST::Suggestions
       include Mastodon::REST::Apps
+      include Mastodon::REST::Instances
     end
   end
 end
