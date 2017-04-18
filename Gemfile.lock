@@ -3,6 +3,7 @@ PATH
   specs:
     mastodon-api (1.1.0)
       addressable (~> 2.4)
+      buftok
       http (~> 2.0)
 
 GEM
@@ -10,6 +11,7 @@ GEM
   specs:
     addressable (2.4.0)
     ast (2.3.0)
+    buftok (0.2.0)
     coderay (1.1.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
