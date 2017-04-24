@@ -6,19 +6,26 @@ module Mastodon
     module Statuses
       include Mastodon::REST::Utils
 
-      # Create new status
+      # @overload create_status(text, in_reply_to_id, media_ids, visibility)
+      #   Create new status
       # @param text [String]
       # @param in_reply_to_id [Integer]
       # @param media_ids [Array<Integer>]
       # @param visibility [String]
       # @return [Mastodon::Status]
-      def create_status(text, in_reply_to_id = nil, media_ids = [], visibility = nil)
-        params = {
-          status: text,
-          in_reply_to_id: in_reply_to_id,
-          'media_ids[]' => media_ids,
-          visibility: visibility,
-        }
+      # @overload create_status(text, args)
+      #   Create new status
+      # @param text [String]
+      # @param options [Hash]
+      # @option options :in_reply_to_id [Integer]
+      # @option options :media_ids [Array<Integer>]
+      # @option options :visibility [String]
+      # @return <Mastodon::Status>
+      def create_status(text, *args)
+        params = normalize_status_params(*args)
+        params[:status] = text
+        params['media_ids[]'] ||= params.delete(:media_ids)
+
         perform_request_with_object(:post, '/api/v1/statuses', params, Mastodon::Status)
       end
 
@@ -89,6 +96,20 @@ module Mastodon
       # @return [Mastodon::Collection<Mastodon::Status>]
       def statuses(account_id, options = {})
         perform_request_with_collection(:get, "/api/v1/accounts/#{account_id}/statuses", options, Mastodon::Status)
+      end
+
+      private
+
+      def normalize_status_params(*args)
+        if args.length == 1 && args.first.is_a?(Hash)
+          args.shift
+        else
+          {
+            in_reply_to_id: args.shift,
+            'media_ids[]' => args.shift,
+            visibility: args.shift,
+          }
+        end
       end
     end
   end

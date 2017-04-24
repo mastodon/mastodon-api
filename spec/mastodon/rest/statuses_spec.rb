@@ -25,6 +25,46 @@ describe Mastodon::REST::Statuses do
       expect(status.content).to match(/test!/)
       expect(status.media_attachments.first).to be_a Mastodon::Entities::Media
     end
+
+    describe 'API parameters' do
+      def expected_params(opts)
+        opts = {
+          :in_reply_to_id => nil,
+          'media_ids[]' => nil,
+          :visibility => nil,
+        }.merge(opts)
+
+        expect(@client).to receive(:perform_request_with_object).with(:post, '/api/v1/statuses', opts, Mastodon::Status)
+      end
+
+      it 'works with status' do
+        expected_params(status: 'hello')
+        @client.create_status('hello')
+      end
+
+      it 'works with status and in_reply_to' do
+        expected_params(status: 'hello', in_reply_to_id: 12_345)
+        @client.create_status('hello', 12_345)
+      end
+
+      it 'works with status, in_reply_to, and media_ids' do
+        expected_params(status: 'hello', in_reply_to_id: 12_345, 'media_ids[]' => [1, 2, 3])
+        @client.create_status('hello', 12_345, [1, 2, 3])
+      end
+
+      it 'works with status, in_reply_to, media_ids, and visibility' do
+        expected_params(status: 'hello', in_reply_to_id: 12_345, 'media_ids[]' => [1, 2, 3], visibility: 'public')
+        @client.create_status('hello', 12_345, [1, 2, 3], 'public')
+      end
+
+      it 'works with params hash' do
+        expected_params(status: 'hello', in_reply_to_id: 12_345, 'media_ids[]' => [1, 2, 3], visibility: 'public')
+        @client.create_status('hello',
+                              in_reply_to_id: 12_345,
+                              media_ids: [1, 2, 3],
+                              visibility: 'public')
+      end
+    end
   end
 
   describe '#status' do
