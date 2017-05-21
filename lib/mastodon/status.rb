@@ -20,6 +20,8 @@ module Mastodon
     #   @return [Integer]
     # @!attribute [r] favourites_count
     #   @return [Integer]
+    # @!attribute [r] visibility
+    #   @return [String]
     # @!attribute [r] account
     #   @return [Mastodon::Account]
     # @!attribute [r] reblog
@@ -28,14 +30,16 @@ module Mastodon
     #   @return [Boolean]
     # @!attribute [r] reblogged?
     #   @return [Boolean]
+    # @!attribute [r] sensitive?
+    #   @return [Boolean]
     # @!attribute [r] media_attachments
     #   @return [Mastodon::Collection<Mastodon::Entities::Media>]
     # @!attribute [r] mentions
     #   @return [Mastodon::Collection<Mastodon::Entities::Mention>]
 
-    normal_attr_reader :id, :content, :in_reply_to_id, :url, :uri, :created_at, :reblogs_count, :favourites_count
+    normal_attr_reader :id, :content, :in_reply_to_id, :url, :uri, :created_at, :reblogs_count, :favourites_count, :visibility
 
-    predicate_attr_reader :favourited, :reblogged
+    predicate_attr_reader :favourited, :reblogged, :sensitive
 
     object_attr_reader :account, Mastodon::Account
     object_attr_reader :reblog, Mastodon::Status
