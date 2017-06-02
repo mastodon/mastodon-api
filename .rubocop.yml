@@ -1,3 +1,9 @@
+Layout/AccessModifierIndentation:
+  EnforcedStyle: indent
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+
 Metrics/BlockNesting:
   Max: 2
 
@@ -16,9 +22,6 @@ Metrics/ParameterLists:
   Max: 4
   CountKeywordArgs: true
 
-Style/AccessModifierIndentation:
-  EnforcedStyle: indent
-
 Style/CollectionMethods:
   Enabled: true
   PreferredMethods:
@@ -32,9 +35,6 @@ Style/DoubleNegation:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
-
-Style/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: space
 
 Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: 'comma'
