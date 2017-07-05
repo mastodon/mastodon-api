@@ -28,12 +28,12 @@ module Mastodon
         Mastodon::Collection.new(response, klass)
       end
 
-      # Format an array of values into a query param hash
+      # Format an array of values into a query param
       # @param key [Symbol]
       # @param values [Enumerable]
-      # @return [Hash]
+      # @return [Array]
       def array_param(key, values)
-        values.map.with_index { |value, i| ["#{key}[#{i}]", value] }.to_h
+        values.map.with_index { |value, i| ["#{key}[]", value] }
       end
     end
   end
