@@ -50,6 +50,17 @@ module Mastodon
       def follow_by_uri(uri)
         perform_request_with_object(:post, '/api/v1/follows', { uri: uri }, Mastodon::Account)
       end
+
+      # Getting an account's status
+      # @param id [Integer]
+      # @param options [Hash]
+      # @options max_id [Integer] Get a list of statuses with ID less than this value
+      # @optoins since_id [Integer] Get a list of statuses with ID greater than this value
+      # @options limit [Integer] Maximum number of statuses to get (Default 20, Max 40)
+      # @return [Mastodon::Collection<Mastodon::Status>]
+      def statuses(id, opts = {})
+        perform_request_with_collection(:get, "/api/v1/accounts/#{id}/statuses", opts, Mastodon::Status)
+      end
     end
   end
 end
