@@ -76,4 +76,17 @@ describe Mastodon::REST::Accounts do
       expect(result.username).to eq 'Gargron'
     end
   end
+
+  describe '#statuses' do
+    before do
+      stub_request(:get, 'https://mastodon.social/api/v1/accounts/1/statuses').to_return(fixture('statuses.json'))
+    end
+
+    it 'return statues' do
+      result = @client.statuses(1)
+      expect(result).to be_a Mastodon::Collection
+      expect(result.first).to be_a Mastodon::Status
+      expect(result.first.id).to eq 3053
+    end
+  end
 end
