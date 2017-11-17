@@ -13,6 +13,12 @@ describe Mastodon::REST::Media do
       expect(media).to be_a Mastodon::Media
     end
 
+    it 'works with a description' do
+      path = File.join(File.dirname(__FILE__), '..', '..', 'fixtures', 'upload.png')
+      expect(@client).to receive(:perform_request_with_object).with(anything, anything, hash_including(:description => 'Lorem ipsum'), anything)
+      media = @client.upload_media(File.new(path), 'Lorem ipsum')
+    end
+
     it 'works with a StringIO' do
       media = @client.upload_media(StringIO.new)
       expect(media).to be_a Mastodon::Media
