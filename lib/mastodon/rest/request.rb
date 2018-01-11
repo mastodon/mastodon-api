@@ -32,7 +32,7 @@ module Mastodon
       end
 
       def http_client
-        HTTP
+        HTTP.timeout(:per_operation, connect: @client.timeout[:connect], read: @client.timeout[:read], write: @client.timeout[:write])
       end
     end
   end
