@@ -1,11 +1,11 @@
 module Mastodon
   class Notification < Mastodon::Base
     # @!attribute [r] id
-    #   @return [Integer]
+    #   @return [String]
     # @!attribute [r] type
     #   @return [String]
     # @!attribute [r] created_at
-    #   @return [Time]
+    #   @return [String]
     # @!attribute [r] account
     #   @return [Mastodon::Account]
     # @!attribute [r] status

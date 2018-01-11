@@ -8,7 +8,16 @@ module Mastodon
     #   @return [String]
     # @!attribute [r] email
     #   @return [String]
+    # @!attribute [r] version
+    #   @return [String]
+    # @!attribute [r] urls
+    #   @return [Hash]
 
-    normal_attr_reader :uri, :title, :description, :email
+    normal_attr_reader :uri,
+                       :title,
+                       :description,
+                       :email,
+                       :version,
+                       :urls
   end
 end
