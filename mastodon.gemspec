@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.version       = Mastodon::Version
 
   spec.add_dependency 'http', '~> 3.0'
+  spec.add_dependency 'oj', '~> 3.3'
   spec.add_dependency 'addressable', '~> 2.5'
   spec.add_dependency 'buftok'
 
