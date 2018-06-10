@@ -18,6 +18,15 @@ describe Mastodon::REST::Statuses do
       expect { @client.create_status('') }.to raise_error Mastodon::Error::UnprocessableEntity
     end
 
+    it 'accepts request with headers' do
+      stub_request(:post, 'https://mastodon.social/api/v1/statuses')
+        .with(headers: { 'Idempotency-Key' => '1234567890' })
+        .to_return(fixture('create-status-only-text.json'))
+      status = @client.create_status('Writing a ruby API lib for Mastodon', headers: { 'Idempotency-Key' => '1234567890' })
+      expect(status).to be_a Mastodon::Status
+      expect(status.content).to match(/Writing a ruby API lib for Mastodon/)
+    end
+
     it 'returns media when specified' do
       stub_request(:post, 'https://mastodon.social/api/v1/statuses').to_return(fixture('create-status-with-media.json'))
       status = @client.create_status('test!', nil, [1467])

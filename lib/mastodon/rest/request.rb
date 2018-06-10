@@ -14,6 +14,7 @@ module Mastodon
         @headers        = Mastodon::Headers.new(@client).request_headers
         @path           = @uri.path
         @options        = options
+        @headers        = @options.delete(:headers).merge @headers if @options.is_a?(Hash) && @options[:headers]
       end
 
       def perform
