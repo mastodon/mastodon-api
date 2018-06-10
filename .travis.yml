@@ -7,6 +7,9 @@ notifications:
 rvm:
   - 2.1
   - 2.2
+  - 2.3
+  - 2.4
+  - 2.5
   - ruby-head
 
 bundler_args: --without development --retry=3 --jobs=3
