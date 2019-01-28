@@ -29,7 +29,7 @@ module Mastodon
                        :title,
                        :description,
                        :image,
-                       :type
+                       :type,
                        :author_name,
                        :author_url,
                        :provider_name,

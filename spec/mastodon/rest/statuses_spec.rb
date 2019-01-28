@@ -29,7 +29,7 @@ describe Mastodon::REST::Statuses do
 
     it 'returns media when specified' do
       stub_request(:post, 'https://mastodon.social/api/v1/statuses').to_return(fixture('create-status-with-media.json'))
-      status = @client.create_status('test!', nil, [1467])
+      status = @client.create_status('test!', media_ids: [1467])
       expect(status).to be_a Mastodon::Status
       expect(status.content).to match(/test!/)
       expect(status.media_attachments.first).to be_a Mastodon::Entities::Media
@@ -37,12 +37,6 @@ describe Mastodon::REST::Statuses do
 
     describe 'API parameters' do
       def expected_params(opts)
-        opts = {
-          :in_reply_to_id => nil,
-          'media_ids[]' => nil,
-          :visibility => nil,
-        }.merge(opts)
-
         expect(@client).to receive(:perform_request_with_object).with(:post, '/api/v1/statuses', opts, Mastodon::Status)
       end
 
@@ -53,25 +47,17 @@ describe Mastodon::REST::Statuses do
 
       it 'works with status and in_reply_to' do
         expected_params(status: 'hello', in_reply_to_id: 12_345)
-        @client.create_status('hello', 12_345)
+        @client.create_status('hello', in_reply_to_id: 12_345)
       end
 
       it 'works with status, in_reply_to, and media_ids' do
-        expected_params(status: 'hello', in_reply_to_id: 12_345, 'media_ids[]' => [1, 2, 3])
-        @client.create_status('hello', 12_345, [1, 2, 3])
+        expected_params(status: 'hello', in_reply_to_id: 12_345, :'media_ids[]' => [1, 2, 3])
+        @client.create_status('hello', in_reply_to_id: 12_345, media_ids: [1, 2, 3])
       end
 
       it 'works with status, in_reply_to, media_ids, and visibility' do
-        expected_params(status: 'hello', in_reply_to_id: 12_345, 'media_ids[]' => [1, 2, 3], visibility: 'public')
-        @client.create_status('hello', 12_345, [1, 2, 3], 'public')
-      end
-
-      it 'works with params hash' do
-        expected_params(status: 'hello', in_reply_to_id: 12_345, 'media_ids[]' => [1, 2, 3], visibility: 'public')
-        @client.create_status('hello',
-                              in_reply_to_id: 12_345,
-                              media_ids: [1, 2, 3],
-                              visibility: 'public')
+        expected_params(status: 'hello', in_reply_to_id: 12_345, :'media_ids[]' => [1, 2, 3], visibility: 'public')
+        @client.create_status('hello', in_reply_to_id: 12_345, media_ids: [1, 2, 3], visibility: 'public')
       end
     end
   end

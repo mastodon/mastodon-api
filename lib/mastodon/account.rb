@@ -1,3 +1,6 @@
+require 'mastodon/emoji'
+require 'mastodon/field'
+
 module Mastodon
   class Account < Mastodon::Base
     # @!attribute [r] id
@@ -30,8 +33,14 @@ module Mastodon
     #   @return [String]
     # @!attribute [r] locked?
     #   @return [Boolean]
+    # @!attribute [r] bot?
+    #   @return [Boolean]
     # @!attribute [r] moved
     #   @return [Mastodon::Account]
+    # @!attribute [r] emojis
+    #   @return [Mastodon::Collection<Mastodon::Emoji>]
+    # @!attribute [r] fields
+    #   @return [Mastodon::Collection<Mastodon::Field>]
 
     normal_attr_reader :id,
                        :username,
@@ -48,9 +57,13 @@ module Mastodon
                        :following_count,
                        :statuses_count
 
-    predicate_attr_reader :locked
+    predicate_attr_reader :locked,
+                          :bot
 
     object_attr_reader :moved, Mastodon::Account
+
+    collection_attr_reader :emojis, Mastodon::Emoji
+    collection_attr_reader :fields, Mastodon::Field
 
     def initialize(attributes = {})
       attributes.fetch('id')

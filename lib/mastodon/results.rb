@@ -1,5 +1,6 @@
 require 'mastodon/account'
 require 'mastodon/status'
+require 'mastodon/hashtag'
 
 module Mastodon
   class Results < Mastodon::Base
@@ -8,10 +9,10 @@ module Mastodon
     # @!attribute [r] statuses
     #   @return [Mastodon::Collection<Mastodon::Status>]
     # @!attribute [r] hashtags
-    #   @return [Mastodon::Collection<String>]
+    #   @return [Mastodon::Collection<Mastodon::Hashtag>]
 
     collection_attr_reader :accounts, Mastodon::Account
     collection_attr_reader :statuses, Mastodon::Status
-    collection_attr_reader :hashtags, String
+    collection_attr_reader :hashtags, Mastodon::Hashtag
   end
 end

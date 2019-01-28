@@ -48,15 +48,15 @@ describe Mastodon::Streaming::Client do
 
   describe 'hashtag' do
     it 'passes to stream' do
-      expect(@client).to receive(:stream).with('hashtag', 'tag' => 'bar')
+      expect(@client).to receive(:stream).with('hashtag', tag: 'bar')
       @client.hashtag('bar')
     end
   end
 
-  describe 'firehose' do
+  describe 'public' do
     it 'passes to stream' do
       expect(@client).to receive(:stream).with('public', foo: 'bar')
-      @client.firehose(foo: 'bar')
+      @client.public(foo: 'bar')
     end
   end
 

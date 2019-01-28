@@ -1,5 +1,7 @@
 require 'mastodon/status'
-require 'mastodon/streaming/deleted_status'
+require 'mastodon/conversation'
+require 'mastodon/streaming/events/filters_change'
+require 'mastodon/streaming/events/status_delete'
 
 module Mastodon
   module Streaming
@@ -7,7 +9,9 @@ module Mastodon
       MESSAGE_TYPES = {
         'update' => Status,
         'notification' => Notification,
-        'delete' => DeletedStatus,
+        'conversation' => Conversation,
+        'delete' => Events::StatusDelete,
+        'filters_changed' => Events::FiltersChange,
       }.freeze
 
       def self.parse(type, data)

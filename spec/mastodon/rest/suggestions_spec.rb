@@ -7,7 +7,7 @@ describe Mastodon::REST::Suggestions do
 
   describe '#suggestions' do
     before do
-      stub_request(:get, 'https://mastodon.social/api/v1/accounts/suggestions').to_return(fixture('suggestions.json'))
+      stub_request(:get, 'https://mastodon.social/api/v1/suggestions').to_return(fixture('suggestions.json'))
     end
 
     it 'returns a collection of accounts' do

@@ -16,6 +16,10 @@ module Mastodon
     #   @return [Boolean]
     # @!attribute [r] domain_blocking?
     #   @return [Boolean]
+    # @!attribute [r] showing_reblogs?
+    #   @return [Boolean]
+    # @!attribute [r] endorsed?
+    #   @return [Boolean]
 
     normal_attr_reader :id
 
@@ -25,7 +29,9 @@ module Mastodon
                           :muting,
                           :muting_notifications,
                           :requested,
-                          :domain_blocking
+                          :domain_blocking,
+                          :showing_reblogs,
+                          :endorsed
 
     def initialize(attributes = {})
       attributes.fetch('id')

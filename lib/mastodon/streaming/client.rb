@@ -1,7 +1,6 @@
 require 'http/request'
 require 'mastodon/client'
 require 'mastodon/streaming/connection'
-require 'mastodon/streaming/deleted_status'
 require 'mastodon/streaming/message_parser'
 require 'mastodon/streaming/response'
 
@@ -24,24 +23,30 @@ module Mastodon
 
       # Streams messages for a single user
       #
-      # @yield [Mastodon::Status, Mastodon::Notification, Mastodon::Streaming::DeletedStatus] A stream of Mastodon objects.
+      # @yield [Mastodon::Status, Mastodon::Notification, Mastodon::Streaming::Events::StatusDelete, Mastodon::Streaming::Events::FiltersChange] A stream of Mastodon objects.
       def user(options = {}, &block)
         stream('user', options, &block)
       end
 
       # Returns statuses that contain the specified hashtag
       #
-      # @yield [Mastodon::Status, Mastodon::Notification, Mastodon::Streaming::DeletedStatus] A stream of Mastodon objects.
+      # @yield [Mastodon::Status, Mastodon::Streaming::Events::StatusDelete] A stream of Mastodon objects.
       def hashtag(tag, options = {}, &block)
-        options['tag'] = tag
-        stream('hashtag', options, &block)
+        stream('hashtag', { tag: tag }.merge(options), &block)
       end
 
       # Returns all public statuses
       #
-      # @yield [Mastodon::Status, Mastodon::Notification, Mastodon::Streaming::DeletedStatus] A stream of Mastodon objects.
-      def firehose(options = {}, &block)
+      # @yield [Mastodon::Status, Mastodon::Streaming::Events::StatusDelete] A stream of Mastodon objects.
+      def public(options = {}, &block)
         stream('public', options, &block)
+      end
+
+      # Returns conversations for a single user
+      #
+      # @yield [Mastodon::Conversation] A stream of Mastodon objects.
+      def direct(options = {}, &block)
+        stream('direct', options, &block)
       end
 
       #
@@ -67,16 +72,17 @@ module Mastodon
 
       def request(method, path, params)
         before_request.call
-        uri = Addressable::URI.parse(base_url + path)
 
+        uri     = Addressable::URI.parse(base_url + path)
         headers = Mastodon::Headers.new(self).request_headers
-
         request = HTTP::Request.new(verb: method, uri: uri + '?' + to_url_params(params), headers: headers)
+
         response = Streaming::Response.new do |type, data|
           if item = Streaming::MessageParser.parse(type, data) # rubocop:disable AssignmentInCondition
             yield(item)
           end
         end
+
         @connection.stream(request, response)
       end
 

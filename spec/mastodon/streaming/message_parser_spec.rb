@@ -19,7 +19,7 @@ describe Mastodon::Streaming::MessageParser do
     it 'works for deletes' do
       data = '123'
       result = parser.parse('delete', data)
-      expect(result).to be_a(Mastodon::Streaming::DeletedStatus)
+      expect(result).to be_a(Mastodon::Streaming::Events::StatusDelete)
       expect(result.id).to eql(123)
     end
   end

@@ -4,6 +4,7 @@ require 'mastodon/entities/mention'
 require 'mastodon/entities/app'
 require 'mastodon/entities/hashtag'
 require 'mastodon/emoji'
+require 'mastodon/card'
 
 module Mastodon
   class Status < Mastodon::Base
@@ -55,6 +56,8 @@ module Mastodon
     #   @return [Mastodon::Collection<Mastodon::Entities::Hashtag>]
     # @!attribute [r] emojis
     #   @return [Mastodon::Collection<Mastodon::Emoji>]
+    # @!attribute [r] card
+    #   @return [Mastodon::Card]
 
     normal_attr_reader :id,
                        :content,
@@ -78,6 +81,7 @@ module Mastodon
     object_attr_reader :account, Mastodon::Account
     object_attr_reader :reblog, Mastodon::Status
     object_attr_reader :application, Mastodon::Entities::App
+    object_attr_reader :card, Mastodon::Card
 
     collection_attr_reader :media_attachments, Mastodon::Entities::Media
     collection_attr_reader :mentions, Mastodon::Entities::Mention

@@ -12,12 +12,22 @@ module Mastodon
     #   @return [String]
     # @!attribute [r] urls
     #   @return [Hash]
+    # @!attribute [r] stats
+    #   @return [Hash]
+    # @!attribute [r] languages
+    #   @return [Array<String>]
+    # @!attribute [r] contact_account
+    #   @return [Mastodon::Account]
 
     normal_attr_reader :uri,
                        :title,
                        :description,
                        :email,
                        :version,
-                       :urls
+                       :urls,
+                       :stats,
+                       :languages
+
+    object_attr_reader :contact_account, Mastodon::Account
   end
 end

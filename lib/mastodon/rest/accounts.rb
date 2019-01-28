@@ -1,5 +1,6 @@
 require 'mastodon/rest/utils'
 require 'mastodon/account'
+require 'mastodon/access_token'
 
 module Mastodon
   module REST
@@ -13,14 +14,19 @@ module Mastodon
       end
 
       # Update authenticated account attributes
-      # @param options [Hash]
-      # @option options display_name [String] The name to display in the user's profile
-      # @option options note [String] A new biography for the user
-      # @option options avatar [String] A base64 encoded image to display as the user's avatar
-      # @option options header [String] A base64 encoded image to display as the user's header image
+      # @param params [Hash]
+      # @option params :display_name [String] The name to display in the user's profile
+      # @option params :note [String] A new biography for the user
+      # @option params :avatar [File, StringIO, HTTP::FormData::File]
+      # @option params :header [File, StringIO, HTTP::FormData::File]
       # @return [Mastodon::Account]
-      def update_credentials(opts = {})
-        perform_request_with_object(:patch, '/api/v1/accounts/update_credentials', opts, Mastodon::Account)
+      def update_credentials(params = {})
+        %i(avatar header).each do |key|
+          next unless params.key?(key)
+          params[key] = params[key].is_a?(HTTP::FormData::File) ? params[key] : HTTP::FormData::File.new(params[key])
+        end
+
+        perform_request_with_object(:patch, '/api/v1/accounts/update_credentials', params, Mastodon::Account)
       end
 
       # Retrieve account
@@ -32,23 +38,49 @@ module Mastodon
 
       # Get a list of followers
       # @param id [Integer]
+      # @param options [Hash]
+      # @option options :max_id [Integer]
+      # @option options :since_id [Integer]
+      # @option options :min_id [Integer]
+      # @option options :limit [Integer]
       # @return [Mastodon::Collection<Mastodon::Account>]
-      def followers(id)
-        perform_request_with_collection(:get, "/api/v1/accounts/#{id}/followers", {}, Mastodon::Account)
+      def followers(id, options = {})
+        perform_request_with_collection(:get, "/api/v1/accounts/#{id}/followers", options, Mastodon::Account)
       end
 
       # Get a list of followed accounts
       # @param id [Integer]
+      # @param options [Hash]
+      # @option options :max_id [Integer]
+      # @option options :since_id [Integer]
+      # @option options :min_id [Integer]
+      # @option options :limit [Integer]
       # @return [Mastodon::Collection<Mastodon::Account>]
-      def following(id)
-        perform_request_with_collection(:get, "/api/v1/accounts/#{id}/following", {}, Mastodon::Account)
+      def following(id, options = {})
+        perform_request_with_collection(:get, "/api/v1/accounts/#{id}/following", options, Mastodon::Account)
       end
 
-      # Follow a remote user
-      # @param uri [String] The URI of the remote user, in the format of username@domain
-      # @return [Mastodon::Account]
-      def follow_by_uri(uri)
-        perform_request_with_object(:post, '/api/v1/follows', { uri: uri }, Mastodon::Account)
+      # Sign up (requires authentication with client credentials)
+      # @param params [Hash]
+      # @option params :username [String]
+      # @option params :email [String]
+      # @option params :password [String]
+      # @option params :agreement [Boolean]
+      # @option params :locale [String]
+      # @return [Mastodon::AccessToken]
+      def create_account(params = {})
+        perform_request_with_object(:post, '/api/v1/accounts', params, Mastodon::AccessToken)
+      end
+
+      # Search accounts
+      # @param query [String]
+      # @param params [Hash]
+      # @option params :limit [Integer]
+      # @option params :resolve [Boolean] Whether to attempt resolving unknown remote accounts
+      # @option params :following [Boolean] Only return matches the authenticated user follows
+      # @return [Mastodon::Collection<Mastodon::Account>]
+      def search_accounts(query, params = {})
+        perform_request_with_collection(:get, '/api/v1/accounts/search', { q: query }.merge(params), Mastodon::Account)
       end
     end
   end

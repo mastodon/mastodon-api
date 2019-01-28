@@ -8,7 +8,7 @@ describe Mastodon::REST::Timelines do
   describe '#search' do
     context 'keyword' do
       before do
-        stub_request(:get, 'https://mastodon.social/api/v1/search?q=foo').to_return(fixture('search.json'))
+        stub_request(:get, 'https://mastodon.social/api/v2/search?q=foo').to_return(fixture('search.json'))
       end
 
       it 'returns a result object' do
@@ -16,13 +16,13 @@ describe Mastodon::REST::Timelines do
         expect(results).to be_a Mastodon::Results
         expect(results.accounts.first).to be_a Mastodon::Account
         expect(results.statuses.first).to be_nil
-        expect(results.hashtags.first).to be_a String
+        expect(results.hashtags.first).to be_a Mastodon::Hashtag
       end
     end
 
     context 'Status URL' do
       before do
-        stub_request(:get, 'https://mastodon.social/api/v1/search?q=https://masto.xyz/@account/123').to_return(fixture('search-by-url.json'))
+        stub_request(:get, 'https://mastodon.social/api/v2/search?q=https://masto.xyz/@account/123').to_return(fixture('search-by-url.json'))
       end
 
       it 'returns a result object' do

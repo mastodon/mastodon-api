@@ -15,7 +15,9 @@ module Mastodon
 
       def stream(request, response)
         client = connect(request)
+
         request.stream(client)
+
         while body = client.readpartial(1024) # rubocop:disable AssignmentInCondition
           response << body
         end
@@ -23,10 +25,12 @@ module Mastodon
 
       def connect(request)
         client = new_tcp_socket(request.socket_host, request.socket_port)
+
         return client if !@using_ssl || (!@using_ssl && request.using_proxy?)
 
         client_context = OpenSSL::SSL::SSLContext.new
         ssl_client     = @ssl_socket_class.new(client, client_context)
+
         ssl_client.connect
       end
 
