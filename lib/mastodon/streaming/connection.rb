@@ -28,8 +28,9 @@ module Mastodon
 
         return client if !@using_ssl || (!@using_ssl && request.using_proxy?)
 
-        client_context = OpenSSL::SSL::SSLContext.new
-        ssl_client     = @ssl_socket_class.new(client, client_context)
+        client_context      = OpenSSL::SSL::SSLContext.new
+        ssl_client          = @ssl_socket_class.new(client, client_context)
+        ssl_client.hostname = request.socket_host
 
         ssl_client.connect
       end
