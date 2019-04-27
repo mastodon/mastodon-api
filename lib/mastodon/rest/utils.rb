@@ -13,6 +13,13 @@ module Mastodon
       # @param request_method [Symbol]
       # @param path [String]
       # @param options [Hash]
+      def perform_request_with_headers(request_method, path, options = {})
+        Mastodon::REST::Request.new(self, request_method, path, options).perform_with_headers
+      end
+
+      # @param request_method [Symbol]
+      # @param path [String]
+      # @param options [Hash]
       # @param klass [Class]
       def perform_request_with_object(request_method, path, options, klass)
         response = perform_request(request_method, path, options)
@@ -24,8 +31,8 @@ module Mastodon
       # @param options [Hash]
       # @param klass [Class]
       def perform_request_with_collection(request_method, path, options, klass)
-        response = perform_request(request_method, path, options)
-        Mastodon::Collection.new(response, klass)
+        response, headers = perform_request_with_headers(request_method, path, options)
+        Mastodon::Collection.new(response, klass, headers)
       end
 
       # Format an array of values into a query param
