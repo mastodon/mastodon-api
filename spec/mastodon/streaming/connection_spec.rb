@@ -62,6 +62,7 @@ describe Mastodon::Streaming::Connection do
     it 'requests via the proxy' do
       expect(connection.ssl_socket_class).to receive(:new).and_return(ssl_socket)
       allow(ssl_socket).to receive(:connect)
+      allow(ssl_socket).to receive(:hostname=).with('mastodon.social')
 
       expect(connection).to receive(:new_tcp_socket).with('mastodon.social', 443)
       connection.connect(request)
