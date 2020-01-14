@@ -31,4 +31,17 @@ describe Mastodon::REST::Media do
       expect(media).to be_a Mastodon::Media
     end
   end
+
+  describe '#update_media' do
+    let (:media_id) { 123 }
+    it 'sends the two possible params over' do
+      opts = { description: 'A test description', focus: '1.0,2.3' }
+
+      stub_request(:put, 'https://mastodon.social/api/v1/media/123').
+        with(body: opts).
+        to_return(fixture('media.json'))
+      media = @client.update_media(media_id, opts)
+      expect(media).to be_a Mastodon::Media
+    end
+  end
 end

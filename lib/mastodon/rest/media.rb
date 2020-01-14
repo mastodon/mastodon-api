@@ -24,7 +24,7 @@ module Mastodon
       # @option params :focus [String] Two floating points, comma-delimited
       # @return [Mastodon::Media]
       def update_media(id, params)
-        perform_request_with_object(:put, "/api/v1/media/#{media_id}", params, Mastodon::Media)
+        perform_request_with_object(:put, "/api/v1/media/#{id}", params, Mastodon::Media)
       end
     end
   end
