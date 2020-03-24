@@ -21,6 +21,8 @@ All the documentation is available on [RubyDoc](http://www.rubydoc.info/gems/mas
 
 Assuming that you already have an access token for a user on a given Mastodon instance:
 
+    require 'mastodon'
+
     client = Mastodon::REST::Client.new(base_url: 'https://mastodon.social', bearer_token: 'your_access_token')
 
 If you need to get an access token, you must first ensure that you have the client ID and client secret for your app on the given Mastodon instance (you should save those for future calls):
