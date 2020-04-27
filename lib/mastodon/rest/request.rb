@@ -18,19 +18,23 @@ module Mastodon
       end
 
       def perform
+        perform_with_headers[0]
+      end
+
+      def perform_with_headers
         options_key = @request_method == :get ? :params : :form
         response    = http_client.headers(@headers).public_send(@request_method, @uri.to_s, options_key => @options)
 
         STDERR.puts response.body if ENV['DEBUG'] == 'true'
 
-        fail_or_return(response.code, response.body.empty? ? '' : Oj.load(response.to_s, mode: :null))
+        fail_or_return(response.code, response.body.empty? ? '' : Oj.load(response.to_s, mode: :null), response.headers)
       end
 
       private
 
-      def fail_or_return(code, body)
+      def fail_or_return(code, body, headers)
         raise Mastodon::Error::ERRORS[code].from_response(body) if Mastodon::Error::ERRORS.include?(code)
-        body
+        [body, headers]
       end
 
       def http_client
