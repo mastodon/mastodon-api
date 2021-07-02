@@ -17,6 +17,7 @@ require 'mastodon/rest/reports'
 require 'mastodon/rest/lists'
 require 'mastodon/rest/scheduled_statuses'
 require 'mastodon/rest/conversations'
+require 'mastodon/rest/favourites'
 
 module Mastodon
   module REST
@@ -40,6 +41,7 @@ module Mastodon
       include Mastodon::REST::Lists
       include Mastodon::REST::ScheduledStatuses
       include Mastodon::REST::Conversations
+      include Mastodon::REST::Favourites
     end
   end
 end
