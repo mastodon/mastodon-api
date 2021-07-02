@@ -15,7 +15,7 @@ module Mastodon
 
       # Feature a tag
       # @param name [String]
-      # @return [Mastodon::Collection<Mastodon::FeaturedTag>]
+      # @return [Mastodon::FeaturedTag]
       def feature_tag(name)
         perform_request_with_object(:post, '/api/v1/featured_tags', {name: name}, Mastodon::FeaturedTag)
       end

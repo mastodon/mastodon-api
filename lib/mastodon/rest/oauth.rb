@@ -14,7 +14,7 @@ module Mastodon
       # @option options :scope [String]
       # @option options :code [String]
       # @option options :grant_type [String]
-      # @return [Mastodon::Collection<Mastodon::AccessToken>]
+      # @return [Mastodon::AccessToken]
       def obtain_token(options = {})
         perform_request_with_object(:post, '/api/v1/oauth/token', options, Mastodon::AccessToken)
       end
