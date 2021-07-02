@@ -19,6 +19,7 @@ require 'mastodon/rest/scheduled_statuses'
 require 'mastodon/rest/conversations'
 require 'mastodon/rest/favourites'
 require 'mastodon/rest/featured_tags'
+require 'mastodon/rest/oauth'
 
 module Mastodon
   module REST
@@ -44,6 +45,7 @@ module Mastodon
       include Mastodon::REST::Conversations
       include Mastodon::REST::Favourites
       include Mastodon::REST::FeaturedTags
+      include Mastodon::REST::OAuth
     end
   end
 end
