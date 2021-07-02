@@ -72,6 +72,13 @@ module Mastodon
       def remove_accounts_from_list(id, account_ids = [])
         perform_request(:delete, "/api/v1/lists/#{id}/accounts", { 'account_ids[]': account_ids })
       end
+
+      # Lists that you have added the given account ID to
+      # @param id [Integer]
+      # @return [Mastodon::Collection<Mastodon::List>]
+      def lists_containing_account(account_id)
+        perform_request_with_collection(:get, "/api/v1/accounts/#{account_id}/lists", {}, Mastodon::List)
+      end
     end
   end
 end
