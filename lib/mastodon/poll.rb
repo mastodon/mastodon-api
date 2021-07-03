@@ -1,3 +1,5 @@
+require 'mastodon/emoji'
+
 module Mastodon
   class Poll < Mastodon::Base
     # @!attribute [r] id
