@@ -23,6 +23,7 @@ require 'mastodon/rest/oauth'
 require 'mastodon/rest/polls'
 require 'mastodon/rest/push_subscriptions'
 require 'mastodon/rest/directory'
+require 'mastodon/rest/trends'
 
 module Mastodon
   module REST
@@ -52,6 +53,7 @@ module Mastodon
       include Mastodon::REST::Polls
       include Mastodon::REST::PushSubscriptions
       include Mastodon::REST::Directory
+      include Mastodon::REST::Trends
     end
   end
 end
