@@ -24,6 +24,7 @@ require 'mastodon/rest/polls'
 require 'mastodon/rest/push_subscriptions'
 require 'mastodon/rest/directory'
 require 'mastodon/rest/trends'
+require 'mastodon/rest/announcements'
 
 module Mastodon
   module REST
@@ -54,6 +55,7 @@ module Mastodon
       include Mastodon::REST::PushSubscriptions
       include Mastodon::REST::Directory
       include Mastodon::REST::Trends
+      include Mastodon::REST::Announcements
     end
   end
 end
