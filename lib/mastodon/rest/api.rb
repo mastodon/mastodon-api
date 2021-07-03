@@ -21,6 +21,7 @@ require 'mastodon/rest/favourites'
 require 'mastodon/rest/featured_tags'
 require 'mastodon/rest/oauth'
 require 'mastodon/rest/polls'
+require 'mastodon/rest/push_subscriptions'
 
 module Mastodon
   module REST
@@ -48,6 +49,7 @@ module Mastodon
       include Mastodon::REST::FeaturedTags
       include Mastodon::REST::OAuth
       include Mastodon::REST::Polls
+      include Mastodon::REST::PushSubscriptions
     end
   end
 end
