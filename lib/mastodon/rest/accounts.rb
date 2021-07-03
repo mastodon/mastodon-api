@@ -1,6 +1,7 @@
 require 'mastodon/rest/utils'
 require 'mastodon/account'
 require 'mastodon/access_token'
+require 'mastodon/identity_proof'
 
 module Mastodon
   module REST
@@ -81,6 +82,13 @@ module Mastodon
       # @return [Mastodon::Collection<Mastodon::Account>]
       def search_accounts(query, params = {})
         perform_request_with_collection(:get, '/api/v1/accounts/search', { q: query }.merge(params), Mastodon::Account)
+      end
+
+      # List of account identity proofs
+      # @param id [Integer]
+      # @return [Mastodon::Collection<Mastodon::IdentityProof>]
+      def identity_proofs(id)
+        perform_request_with_collection(:get, "/api/v1/accounts/#{id}/identity_proofs", options, Mastodon::IdentityProof)
       end
     end
   end

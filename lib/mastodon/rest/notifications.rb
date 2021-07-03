@@ -19,6 +19,13 @@ module Mastodon
         perform_request_with_collection(:get, '/api/v1/notifications', options, Mastodon::Notification)
       end
 
+      # Get a single notification
+      # @param notification_id [Integer]
+      # @return Mastodon::Notification
+      def notification(notification_id)
+        perform_request_with_object(:get, "/api/v1/notifications/#{notification_id}", {}, Mastodon::Notification)
+      end
+
       # Dismiss a notification
       # @param id [Integer]
       def dismiss_notification(id)

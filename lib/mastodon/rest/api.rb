@@ -17,6 +17,14 @@ require 'mastodon/rest/reports'
 require 'mastodon/rest/lists'
 require 'mastodon/rest/scheduled_statuses'
 require 'mastodon/rest/conversations'
+require 'mastodon/rest/favourites'
+require 'mastodon/rest/featured_tags'
+require 'mastodon/rest/oauth'
+require 'mastodon/rest/polls'
+require 'mastodon/rest/push_subscriptions'
+require 'mastodon/rest/directory'
+require 'mastodon/rest/trends'
+require 'mastodon/rest/announcements'
 
 module Mastodon
   module REST
@@ -40,6 +48,14 @@ module Mastodon
       include Mastodon::REST::Lists
       include Mastodon::REST::ScheduledStatuses
       include Mastodon::REST::Conversations
+      include Mastodon::REST::Favourites
+      include Mastodon::REST::FeaturedTags
+      include Mastodon::REST::OAuth
+      include Mastodon::REST::Polls
+      include Mastodon::REST::PushSubscriptions
+      include Mastodon::REST::Directory
+      include Mastodon::REST::Trends
+      include Mastodon::REST::Announcements
     end
   end
 end
