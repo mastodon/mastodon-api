@@ -20,6 +20,7 @@ require 'mastodon/rest/conversations'
 require 'mastodon/rest/favourites'
 require 'mastodon/rest/featured_tags'
 require 'mastodon/rest/oauth'
+require 'mastodon/rest/polls'
 
 module Mastodon
   module REST
@@ -46,6 +47,7 @@ module Mastodon
       include Mastodon::REST::Favourites
       include Mastodon::REST::FeaturedTags
       include Mastodon::REST::OAuth
+      include Mastodon::REST::Polls
     end
   end
 end
