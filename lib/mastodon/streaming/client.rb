@@ -24,36 +24,36 @@ module Mastodon
       # Streams messages for a single user
       #
       # @yield [Mastodon::Status, Mastodon::Notification, Mastodon::Streaming::Events::StatusDelete, Mastodon::Streaming::Events::FiltersChange] A stream of Mastodon objects.
-      def user(options = {}, &block)
-        stream('user', options, &block)
+      def user(**options, &block)
+        stream('user', **options, &block)
       end
 
       # Returns statuses that contain the specified hashtag
       #
       # @yield [Mastodon::Status, Mastodon::Streaming::Events::StatusDelete] A stream of Mastodon objects.
-      def hashtag(tag, options = {}, &block)
-        stream('hashtag', { tag: tag }.merge(options), &block)
+      def hashtag(tag, **options, &block)
+        stream('hashtag', **{ tag: tag, **options}, &block)
       end
 
       # Returns all public statuses
       #
       # @yield [Mastodon::Status, Mastodon::Streaming::Events::StatusDelete] A stream of Mastodon objects.
-      def public(options = {}, &block)
-        stream('public', options, &block)
+      def public(**options, &block)
+        stream('public', **options, &block)
       end
 
       # Returns conversations for a single user
       #
       # @yield [Mastodon::Conversation] A stream of Mastodon objects.
-      def direct(options = {}, &block)
+      def direct(**options, &block)
         stream('direct', options, &block)
       end
 
       #
       # Calls an arbitrary streaming endpoint and returns the results
       # @yield [Mastodon::Status, Mastodon::Notification, Mastodon::Streaming::DeletedStatus] A stream of Mastodon objects.
-      def stream(path, options = {}, &block)
-        request(:get, "/api/v1/streaming/#{path}", options, &block)
+      def stream(path, **options, &block)
+        request(:get, "/api/v1/streaming/#{path}", **options, &block)
       end
 
       # Set a Proc to be run when connection established.
@@ -70,7 +70,7 @@ module Mastodon
 
       private
 
-      def request(method, path, params)
+      def request(method, path, **params)
         before_request.call
 
         uri     = Addressable::URI.parse(base_url + path)
