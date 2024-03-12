@@ -32,7 +32,7 @@ module Mastodon
       #
       # @yield [Mastodon::Status, Mastodon::Streaming::Events::StatusDelete] A stream of Mastodon objects.
       def hashtag(tag, options = {}, &block)
-        stream('hashtag', { tag: tag }.merge(options), &block)
+        stream('hashtag', { tag: }.merge(options), &block)
       end
 
       # Returns all public statuses
@@ -76,9 +76,9 @@ module Mastodon
         uri     = Addressable::URI.parse(base_url + path)
         headers = Mastodon::Headers.new(self).request_headers
 
-        request = HTTP::Request.new(verb: method, uri: uri + '?' + to_url_params(params), headers: headers)
+        request = HTTP::Request.new(verb: method, uri: "#{uri}?#{to_url_params(params)}", headers:)
         response = Streaming::Response.new do |type, data|
-          if item = Streaming::MessageParser.parse(type, data) # rubocop:disable AssignmentInCondition
+          if item = Streaming::MessageParser.parse(type, data) # rubocop:disable Lint/AssignmentInCondition
             yield(item)
           end
         end

@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Mastodon::Media do
+  subject { Mastodon::Media.new(attrs) }
+
   let(:attrs) do
     {
       'id' => 4,
@@ -10,7 +12,6 @@ describe Mastodon::Media do
       'text_url' => 'http://site.com/media/3srFLJIxDRROiMzvmUk',
     }
   end
-  subject { Mastodon::Media.new(attrs) }
 
   it 'has expected values' do
     attrs.each do |key, value|

@@ -18,7 +18,7 @@ describe Mastodon::Streaming::Client do
   end
 
   describe 'before_request' do
-    before(:each) do
+    before do
       @client.connection = FakeConnection.new(fixture('update_streaming.txt'))
     end
 

@@ -16,7 +16,7 @@ module Mastodon
 
       def self.parse(type, data)
         klass = MESSAGE_TYPES[type]
-        klass.new(data) if klass
+        klass&.new(data)
       end
     end
   end

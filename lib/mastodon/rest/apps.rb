@@ -14,7 +14,7 @@ module Mastodon
       # @param website [String]
       # @return [Mastodon::App]
       def create_app(name, redirect_uri, scopes = 'read', website = nil)
-        perform_request_with_object(:post, '/api/v1/apps', { client_name: name, redirect_uris: redirect_uri, scopes: scopes, website: website }, Mastodon::App)
+        perform_request_with_object(:post, '/api/v1/apps', { client_name: name, redirect_uris: redirect_uri, scopes:, website: }, Mastodon::App)
       end
 
       # Return currently used app and confirm that client credentials are valid

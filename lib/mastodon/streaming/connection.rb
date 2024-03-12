@@ -9,7 +9,7 @@ module Mastodon
       def initialize(options = {})
         @tcp_socket_class = options.fetch(:tcp_socket_class) { TCPSocket }
         @ssl_socket_class = options.fetch(:ssl_socket_class) { OpenSSL::SSL::SSLSocket }
-        @using_ssl        = options.fetch(:using_ssl)        { false }
+        @using_ssl        = options.fetch(:using_ssl, false)
       end
 
       def stream(request, response)
@@ -17,7 +17,7 @@ module Mastodon
 
         request.stream(client)
 
-        while body = client.readpartial(1024) # rubocop:disable AssignmentInCondition
+        while body = client.readpartial(1024) # rubocop:disable Lint/AssignmentInCondition
           response << body
         end
       end

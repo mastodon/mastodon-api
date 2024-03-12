@@ -13,7 +13,7 @@ module Mastodon
       # @option params :forward [Boolean] Whether to forward a copy of the report to the origin of the account
       def create_report(account_id, params = {})
         params[:'status_ids[]'] = params.delete(:status_ids) if params.key?(:status_ids)
-        perform_request(:post, '/api/v1/reports', { account_id: account_id }.merge(params))
+        perform_request(:post, '/api/v1/reports', { account_id: }.merge(params))
       end
     end
   end

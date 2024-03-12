@@ -1,17 +1,17 @@
 require 'spec_helper'
 
-describe Mastodon::Streaming::Connection do
-  class DummyTCPSocket; end
-  class DummySSLSocket; end
+class DummyTCPSocket; end
+class DummySSLSocket; end
 
-  class DummyResponse
-    def initiailze
-      yield
-    end
-
-    def <<(data); end
+class DummyResponse
+  def initiailze
+    yield
   end
 
+  def <<(data); end
+end
+
+describe Mastodon::Streaming::Connection do
   describe 'initialize' do
     context 'no options provided' do
       subject(:connection) { Mastodon::Streaming::Connection.new }
@@ -36,6 +36,7 @@ describe Mastodon::Streaming::Connection do
 
   describe 'stream' do
     subject(:connection) { Mastodon::Streaming::Connection.new }
+
     let(:request) { double(HTTP::Request) }
     let(:client) { double('client') }
     let(:response) { Mastodon::Streaming::Response.new }
@@ -58,7 +59,7 @@ describe Mastodon::Streaming::Connection do
     let(:uri)    { 'https://mastodon.social//api/v1/streaming/user' }
     let(:ssl_socket) { double('ssl_socket') }
 
-    let(:request) { HTTP::Request.new(verb: method, uri: uri) }
+    let(:request) { HTTP::Request.new(verb: method, uri:) }
 
     it 'requests via the proxy' do
       expect(connection.ssl_socket_class).to receive(:new).and_return(ssl_socket)

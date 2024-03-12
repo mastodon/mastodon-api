@@ -1,3 +1,11 @@
+AllCops:
+  TargetRubyVersion: 3.1.x
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - 'spec/**/*.rb'
+  
 Layout/AccessModifierIndentation:
   EnforcedStyle: indent
 
@@ -7,7 +15,7 @@ Layout/SpaceInsideHashLiteralBraces:
 Metrics/BlockNesting:
   Max: 2
 
-Metrics/LineLength:
+Layout/LineLength:
   AllowURI: true
   Enabled: false
 

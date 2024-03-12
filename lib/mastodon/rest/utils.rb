@@ -33,7 +33,7 @@ module Mastodon
       # @param values [Enumerable]
       # @return [Array]
       def array_param(key, values)
-        values.map.with_index { |value, i| ["#{key}[]", value] }
+        values.map.with_index { |value, _i| ["#{key}[]", value] }
       end
     end
   end

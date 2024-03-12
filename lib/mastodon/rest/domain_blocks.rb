@@ -19,13 +19,13 @@ module Mastodon
       # Block a domain
       # @param domain [String]
       def block_domain(domain)
-        perform_request(:post, '/api/v1/domain_blocks', domain: domain)
+        perform_request(:post, '/api/v1/domain_blocks', domain:)
       end
 
       # Unblock a domain
       # @param domain [String]
       def unblock_domain(domain)
-        perform_request(:delete, '/api/v1/domain_blocks', domain: domain)
+        perform_request(:delete, '/api/v1/domain_blocks', domain:)
       end
     end
   end

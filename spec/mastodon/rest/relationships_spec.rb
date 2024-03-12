@@ -55,7 +55,7 @@ describe Mastodon::REST::Relationships do
       relationship = @client.unfollow(1)
       expect(relationship).to be_a Mastodon::Relationship
       expect(relationship.id).to eq 1
-      expect(relationship).to_not be_following
+      expect(relationship).not_to be_following
     end
   end
 
@@ -81,7 +81,7 @@ describe Mastodon::REST::Relationships do
       relationship = @client.unblock(1)
       expect(relationship).to be_a Mastodon::Relationship
       expect(relationship.id).to eq 1
-      expect(relationship).to_not be_blocking
+      expect(relationship).not_to be_blocking
     end
   end
 end

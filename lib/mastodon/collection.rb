@@ -6,12 +6,10 @@ module Mastodon
       @collection = items.map { |attributes| klass.new(attributes) }
     end
 
-    def each(start = 0)
+    def each(start = 0, &block)
       return to_enum(:each, start) unless block_given?
 
-      Array(@collection[start..-1]).each do |element|
-        yield(element)
-      end
+      Array(@collection[start..]).each(&block)
 
       self
     end

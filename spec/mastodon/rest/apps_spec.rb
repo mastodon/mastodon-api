@@ -13,8 +13,8 @@ describe Mastodon::REST::Apps do
     it 'returns an app' do
       app = @client.create_app('Test app', 'http://localhost:3000/callback')
       expect(app).to be_a Mastodon::App
-      expect(app.client_id).to_not be_empty
-      expect(app.client_secret).to_not be_empty
+      expect(app.client_id).not_to be_empty
+      expect(app.client_secret).not_to be_empty
     end
   end
 end

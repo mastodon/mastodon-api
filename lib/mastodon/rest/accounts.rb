@@ -21,7 +21,7 @@ module Mastodon
       # @option params :header [File, StringIO, HTTP::FormData::File]
       # @return [Mastodon::Account]
       def update_credentials(params = {})
-        %i(avatar header).each do |key|
+        %i[avatar header].each do |key|
           next unless params.key?(key)
 
           params[key] = params[key].is_a?(HTTP::FormData::File) ? params[key] : HTTP::FormData::File.new(params[key])

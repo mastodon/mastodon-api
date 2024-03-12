@@ -14,7 +14,7 @@ module Mastodon
       # @return [Mastodon::Media]
       def upload_media(file, params = {})
         file = file.is_a?(HTTP::FormData::File) ? file : HTTP::FormData::File.new(file)
-        perform_request_with_object(:post, '/api/v1/media', { file: file }.merge(params), Mastodon::Media)
+        perform_request_with_object(:post, '/api/v1/media', { file: }.merge(params), Mastodon::Media)
       end
 
       # Update a media description, can only be updated while it's not associated to a status

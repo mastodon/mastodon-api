@@ -8,9 +8,6 @@ host = ENV['HOST']
 token = ENV['TOKEN']
 endpoint = ENV.fetch('ENDPOINT', '/api/v1/streaming/public')
 
-client = Mastodon::REST::Client.new(base_url: host, bearer_token: token)
-
-
 streaming_client = Mastodon::Streaming::Client.new(base_url: host, bearer_token: token)
 
 streaming_client.send(:request, :get, endpoint, {}) do |n|
@@ -18,5 +15,5 @@ streaming_client.send(:request, :get, endpoint, {}) do |n|
   next unless n.is_a?(Mastodon::Status)
 
   text = Nokogiri::HTML(n.status.content).text
-  STDERR.puts text
+  warn text
 end

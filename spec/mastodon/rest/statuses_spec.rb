@@ -51,12 +51,12 @@ describe Mastodon::REST::Statuses do
       end
 
       it 'works with status, in_reply_to, and media_ids' do
-        expected_params(status: 'hello', in_reply_to_id: 12_345, :'media_ids[]' => [1, 2, 3])
+        expected_params(status: 'hello', in_reply_to_id: 12_345, 'media_ids[]': [1, 2, 3])
         @client.create_status('hello', in_reply_to_id: 12_345, media_ids: [1, 2, 3])
       end
 
       it 'works with status, in_reply_to, media_ids, and visibility' do
-        expected_params(status: 'hello', in_reply_to_id: 12_345, :'media_ids[]' => [1, 2, 3], visibility: 'public')
+        expected_params(status: 'hello', in_reply_to_id: 12_345, 'media_ids[]': [1, 2, 3], visibility: 'public')
         @client.create_status('hello', in_reply_to_id: 12_345, media_ids: [1, 2, 3], visibility: 'public')
       end
     end
@@ -131,7 +131,7 @@ describe Mastodon::REST::Statuses do
       status = @client.unfavourite(35_768)
       expect(status).to be_a Mastodon::Status
       expect(status.id).to eq 35_768
-      expect(status).to_not be_favourited
+      expect(status).not_to be_favourited
     end
   end
 

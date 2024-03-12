@@ -10,8 +10,8 @@ group :development do
 end
 
 group :test do
-  gem 'rspec', '~> 3.0'
   gem 'fuubar'
+  gem 'rspec', '~> 3.0'
   gem 'rubocop'
   gem 'simplecov'
   gem 'timecop'
