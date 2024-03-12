@@ -36,7 +36,10 @@ Style/DoubleNegation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: 'comma'
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: 'comma'
 
 Style/RegexpLiteral:

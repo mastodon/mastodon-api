@@ -75,8 +75,8 @@ module Mastodon
 
         uri     = Addressable::URI.parse(base_url + path)
         headers = Mastodon::Headers.new(self).request_headers
-        request = HTTP::Request.new(verb: method, uri: uri + '?' + to_url_params(params), headers: headers)
 
+        request = HTTP::Request.new(verb: method, uri: uri + '?' + to_url_params(params), headers: headers)
         response = Streaming::Response.new do |type, data|
           if item = Streaming::MessageParser.parse(type, data) # rubocop:disable AssignmentInCondition
             yield(item)

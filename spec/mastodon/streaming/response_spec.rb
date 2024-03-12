@@ -18,6 +18,16 @@ describe Mastodon::Streaming::Response do
     end
   end
 
+  describe '<<' do
+    subject { Mastodon::Streaming::Response.new }
+    it 'passes to on_body' do
+      subject << 'HTTP/1.1 200 OK\r\n'
+
+      expect(subject).to receive(:on_body).with(':thump')
+      subject << ':thump'
+    end
+  end
+  
   describe 'on_body' do
     subject do
       Mastodon::Streaming::Response.new do |type, data|

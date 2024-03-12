@@ -14,9 +14,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w(lib)
   spec.version       = Mastodon::Version
 
-  spec.add_dependency 'http', '~> 4.0'
+  spec.add_dependency 'http', '~> 5.2.0'
   spec.add_dependency 'oj', '~> 3.7'
-  spec.add_dependency 'addressable', '~> 2.6'
+  spec.add_dependency 'addressable', '~> 2.8'
   spec.add_dependency 'buftok', '~> 0'
 
   spec.add_development_dependency 'bundler', '> 1', '< 3'

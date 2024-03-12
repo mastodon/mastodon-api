@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Mastodon::Streaming::Connection do
   class DummyTCPSocket; end
   class DummySSLSocket; end
+
   class DummyResponse
     def initiailze
       yield

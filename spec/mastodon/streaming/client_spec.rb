@@ -41,28 +41,28 @@ describe Mastodon::Streaming::Client do
 
   describe 'user' do
     it 'passes to stream' do
-      expect(@client).to receive(:stream).with('user', foo: 'bar')
+      expect(@client).to receive(:stream).with('user', { foo: 'bar' })
       @client.user(foo: 'bar')
     end
   end
 
   describe 'hashtag' do
     it 'passes to stream' do
-      expect(@client).to receive(:stream).with('hashtag', tag: 'bar')
+      expect(@client).to receive(:stream).with('hashtag', { tag: 'bar' })
       @client.hashtag('bar')
     end
   end
 
   describe 'public' do
     it 'passes to stream' do
-      expect(@client).to receive(:stream).with('public', foo: 'bar')
+      expect(@client).to receive(:stream).with('public', { foo: 'bar' })
       @client.public(foo: 'bar')
     end
   end
 
   describe 'stream' do
     it 'passes to request' do
-      expect(@client).to receive(:request).with(:get, '/api/v1/streaming/endpoint', foo: 'bar')
+      expect(@client).to receive(:request).with(:get, '/api/v1/streaming/endpoint', { foo: 'bar' })
       @client.stream('endpoint', foo: 'bar')
     end
   end

@@ -10,7 +10,7 @@ module Mastodon
       #
       # @return [Mastodon::Streaming::Response]
       def initialize(&block)
-        @block     = block
+        @block = block
         @parser = HTTP::Response::Parser.new
         @tokenizer = BufferedTokenizer.new("\n\n")
         @match = Regexp.new(/event: ([a-z]+)\ndata: (.+)/m)
@@ -20,11 +20,8 @@ module Mastodon
         @parser.add(data)
         error = Mastodon::Error::ERRORS[@parser.status_code]
         raise error if error
-      end
 
-      # @note this does get called
-      def on_headers_complete(_headers)
-        @finished[:headers] = true
+        on_body(data)
       end
 
       def on_body(data)
